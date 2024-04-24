@@ -33,14 +33,18 @@ public class LoginView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 230, 340, 40));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, 340, 50));
+        jTextField1.setBorder(null);
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 230, 340, 30));
+
+        jPasswordField1.setBorder(null);
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 340, 340, 30));
 
         jButtonRealizarCadastro.setForeground(new java.awt.Color(255, 102, 204));
-        jButtonRealizarCadastro.setText("Realizar cadastro");
+        jButtonRealizarCadastro.setText("Não tem uma conta? Cadastrar");
         jButtonRealizarCadastro.setBorderPainted(false);
         jButtonRealizarCadastro.setContentAreaFilled(false);
         jButtonRealizarCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -49,7 +53,7 @@ public class LoginView extends javax.swing.JFrame {
                 jButtonRealizarCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 470, 200, 30));
+        getContentPane().add(jButtonRealizarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 220, 30));
 
         jButtonEntrar1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEntrar1.setContentAreaFilled(false);
