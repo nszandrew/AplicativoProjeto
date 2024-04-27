@@ -82,6 +82,9 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jButtonEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrar1ActionPerformed
         // TODO add your handling code here:
+        MenuView telaMenu = new MenuView();
+        this.setVisible(false);
+        telaMenu.setVisible(true);
     }//GEN-LAST:event_jButtonEntrar1ActionPerformed
 
     /**
