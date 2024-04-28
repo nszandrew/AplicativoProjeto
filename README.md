@@ -1,12 +1,12 @@
 # Tela de Login
 
-Este é um simples aplicativo de Registro e Login desenvolvido em Java por Andrew Nunes Souza @nszandrew.
+Este é um simples aplicativo de Registro e Login desenvolvido em Java por Andrew Souza @nszandrew.
 
 ## Instalação
 
-1. Clone este repositório para o seu computador.
+1. Clone este repositório para o seu computador ou IDE.
 2. Certifique-se de ter o Java instalado em sua máquina.
-3. Navegue até o diretório do projeto no terminal.
+3. Navegue até o diretório do projeto no terminal ou use a IDE para abrir o projeto.
 4. Execute sua IDE e exporte o aplicativo.
 
 ## Como Usar
