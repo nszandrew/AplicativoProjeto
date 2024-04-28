@@ -4,6 +4,14 @@
  */
 package br.com.login.view;
 
+import br.com.login.controller.LoginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Andrew
@@ -27,10 +35,10 @@ public class CadastroView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonRealizarCadastro = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jTextFieldTelefone = new javax.swing.JTextField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
         jButtonCadastrar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -49,25 +57,25 @@ public class CadastroView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField2.setBorder(null);
-        jTextField2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNome.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jTextFieldNome.setBorder(null);
+        jTextFieldNome.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 290, 30));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 290, 30));
 
-        jTextField1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField1.setBorder(null);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 300, 30));
+        jTextFieldEmail.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jTextFieldEmail.setBorder(null);
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 300, 30));
 
-        jTextField3.setBorder(null);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 290, 30));
+        jTextFieldTelefone.setBorder(null);
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 290, 30));
 
-        jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 290, 30));
+        jPasswordFieldSenha.setBorder(null);
+        getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 290, 30));
 
         jButtonCadastrar.setBackground(new java.awt.Color(51, 102, 255));
         jButtonCadastrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,11 +109,22 @@ public class CadastroView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRealizarCadastroActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        LoginView telaLogin = new LoginView();
-        telaLogin.setVisible(true);
-        this.setVisible(false);
+        
+        if(jTextFieldNome.getText().matches("") || jTextFieldEmail.getText().matches("") || jPasswordFieldSenha.getText().matches("") || jTextFieldTelefone.getText().matches("")){ 
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos!");
+        } else {       
+            LoginController cadastro = new LoginController();
+            try {
+                cadastro.cadastroUsuario(this);
+            } catch (SQLException exe) {
+                Logger.getLogger(CadastroView.class.getName()).log(Level.SEVERE, null, exe);
+            }
+                LoginView telaLogin = new LoginView();
+                telaLogin.setVisible(true);
+                JOptionPane.showMessageDialog(rootPane, "Cadastro Realizado com Sucesso!");
+                this.setVisible(false);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
-
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         LoginView telaLogin = new LoginView();
@@ -113,10 +132,46 @@ public class CadastroView extends javax.swing.JFrame {
         telaLogin.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNome;
+    }
+
+    public void setjTextFieldNome(JTextField jTextFieldNome) {
+        this.jTextFieldNome = jTextFieldNome;
+    }
+
+    public JTextField getjTextFieldTelefone() {
+        return jTextFieldTelefone;
+    }
+
+    public void setjTextFieldTelefone(JTextField jTextFieldTelefone) {
+        this.jTextFieldTelefone = jTextFieldTelefone;
+    }
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -158,9 +213,9 @@ public class CadastroView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonRealizarCadastro;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
 }
