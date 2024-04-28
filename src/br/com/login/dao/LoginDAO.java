@@ -27,11 +27,7 @@ public class LoginDAO {
         
         if (rs.next()){
             System.out.println("Possui");
-            MenuView telaMenu = new MenuView();
-            //LoginView login = new LoginView();
-           // login.setVisible(false);
-            //telaMenu.setVisible(true);
-        
+
         } else {
             System.out.println("Nao possui");
         }

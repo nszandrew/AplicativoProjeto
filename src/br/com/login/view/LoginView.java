@@ -98,9 +98,9 @@ public class LoginView extends javax.swing.JFrame {
         } catch(SQLException sql) {
         
         }
-        //MenuView telaMenu = new MenuView();
-        //this.setVisible(false);
-        //telaMenu.setVisible(true);
+           // MenuView telaMenu = new MenuView();
+            //this.setVisible(false);
+            //telaMenu.setVisible(true);
     }//GEN-LAST:event_jButtonEntrar1ActionPerformed
     }
     public JPasswordField getjPasswordFieldSenha() {
