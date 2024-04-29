@@ -26,8 +26,9 @@ public class LoginDAO {
         ResultSet rs = statment.executeQuery();
         
         if (rs.next()){
-            System.out.println("Possui");
-
+            System.out.println("Possui");            
+            MenuView telaMenu = new MenuView();
+            telaMenu.setVisible(true);
         } else {
             System.out.println("Nao possui");
         }

@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+
 /**
  *
  * @author Andrew
@@ -91,16 +92,14 @@ public class LoginView extends javax.swing.JFrame {
         if(jTextFieldEmail.getText().matches("")|| jPasswordFieldSenha.getText().matches("")){
             JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos!");
         } else {
-       
+            
         try {
         LoginController login = new LoginController();
         login.loginUsuario(this);
         } catch(SQLException sql) {
         
         }
-           // MenuView telaMenu = new MenuView();
-            //this.setVisible(false);
-            //telaMenu.setVisible(true);
+
     }//GEN-LAST:event_jButtonEntrar1ActionPerformed
     }
     public JPasswordField getjPasswordFieldSenha() {

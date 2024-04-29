@@ -9,14 +9,14 @@ import java.net.URI;
 
 /**
  *
- * @author 824148029
+ * @author Andrew
  */
-public class MenuView extends javax.swing.JFrame {
+public class Contato extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuView
+     * Creates new form Contato
      */
-    public MenuView() {
+    public Contato() {
         initComponents();
     }
 
@@ -29,17 +29,28 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonMenu1 = new javax.swing.JButton();
         jButtonUsar = new javax.swing.JButton();
         jButtonLogOut = new javax.swing.JButton();
-        jButtonOnuLink = new javax.swing.JButton();
-        jButtonContato = new javax.swing.JButton();
-        jButtonMenuStay = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
+        jButtonOnuView = new javax.swing.JButton();
+        jButtonMenu = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonMenu1.setBorder(null);
+        jButtonMenu1.setContentAreaFilled(false);
+        jButtonMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenu1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
 
         jButtonUsar.setBorder(null);
         jButtonUsar.setContentAreaFilled(false);
@@ -49,7 +60,7 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonUsarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 23, 120, 40));
+        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 30, 120, 30));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -61,31 +72,6 @@ public class MenuView extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 40, 40));
 
-        jButtonOnuLink.setBorder(null);
-        jButtonOnuLink.setContentAreaFilled(false);
-        jButtonOnuLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonOnuLink.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOnuLinkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 420, 120));
-
-        jButtonContato.setBorder(null);
-        jButtonContato.setContentAreaFilled(false);
-        jButtonContato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonContato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonContatoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 20));
-
-        jButtonMenuStay.setBorder(null);
-        jButtonMenuStay.setContentAreaFilled(false);
-        jButtonMenuStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonMenuStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
-
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
         jButtonProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -94,48 +80,69 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 70, 30));
+        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, 70, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MenuPrincipal.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1410, 800));
+        jButtonOnuView.setBorder(null);
+        jButtonOnuView.setContentAreaFilled(false);
+        jButtonOnuView.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonOnuView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOnuViewActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonOnuView, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 560, 520));
+
+        jButtonMenu.setBorder(null);
+        jButtonMenu.setContentAreaFilled(false);
+        jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
+
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 90, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Contato.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonUsarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUsarActionPerformed
-        UsarView usarView = new UsarView();
-        usarView.setVisible(true);
+    private void jButtonMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenu1ActionPerformed
+        
+        MenuView menuView = new MenuView();
         this.setVisible(false);
+        menuView.setVisible(true);
+    }//GEN-LAST:event_jButtonMenu1ActionPerformed
+
+    private void jButtonUsarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUsarActionPerformed
+       UsarView usarView = new UsarView();
+       this.setVisible(false);
+       usarView.setVisible(true);
     }//GEN-LAST:event_jButtonUsarActionPerformed
 
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
-        this.setVisible(false);
         LoginView loginView = new LoginView();
+        this.setVisible(false);
         loginView.setVisible(true);
     }//GEN-LAST:event_jButtonLogOutActionPerformed
 
-    private void jButtonOnuLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuLinkActionPerformed
-        try {
+    private void jButtonOnuViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuViewActionPerformed
+                try {
             URI link = new URI("https://brasil.un.org/pt-br/sdgs");
             Desktop.getDesktop().browse(link);
         }catch(Exception erro){
             System.err.println(erro);
         }
-    }//GEN-LAST:event_jButtonOnuLinkActionPerformed
-
-    private void jButtonContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoActionPerformed
-        Contato contato = new Contato();
-        this.setVisible(false);
-        contato.setVisible(true);
-    }//GEN-LAST:event_jButtonContatoActionPerformed
+    }//GEN-LAST:event_jButtonOnuViewActionPerformed
 
     private void jButtonProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProjetoActionPerformed
         ProjetoView projetoView = new ProjetoView();
         this.setVisible(false);
         projetoView.setVisible(true);
     }//GEN-LAST:event_jButtonProjetoActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -153,33 +160,32 @@ public class MenuView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Contato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Contato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Contato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Contato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuView().setVisible(true);
+                new Contato().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonContato;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonLogOut;
-    private javax.swing.JButton jButtonMenuStay;
-    private javax.swing.JButton jButtonOnuLink;
+    private javax.swing.JButton jButtonMenu;
+    private javax.swing.JButton jButtonMenu1;
+    private javax.swing.JButton jButtonOnuView;
     private javax.swing.JButton jButtonProjeto;
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
-
 }

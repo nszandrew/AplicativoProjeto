@@ -4,19 +4,16 @@
  */
 package br.com.login.view;
 
-import java.awt.Desktop;
-import java.net.URI;
-
 /**
  *
- * @author 824148029
+ * @author Andrew
  */
-public class MenuView extends javax.swing.JFrame {
+public class UsarView extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuView
+     * Creates new form UsarView
      */
-    public MenuView() {
+    public UsarView() {
         initComponents();
     }
 
@@ -29,27 +26,37 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonUsar = new javax.swing.JButton();
+        jButtonMenu1 = new javax.swing.JButton();
+        jButtonMenu = new javax.swing.JButton();
         jButtonLogOut = new javax.swing.JButton();
-        jButtonOnuLink = new javax.swing.JButton();
         jButtonContato = new javax.swing.JButton();
-        jButtonMenuStay = new javax.swing.JButton();
+        jButtonUsarStay = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
+        jButtonMenu2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonUsar.setBorder(null);
-        jButtonUsar.setContentAreaFilled(false);
-        jButtonUsar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonUsar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMenu1.setBorder(null);
+        jButtonMenu1.setContentAreaFilled(false);
+        jButtonMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonUsarActionPerformed(evt);
+                jButtonMenu1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 23, 120, 40));
+        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 80, 20));
+
+        jButtonMenu.setBorder(null);
+        jButtonMenu.setContentAreaFilled(false);
+        jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -61,16 +68,6 @@ public class MenuView extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 40, 40));
 
-        jButtonOnuLink.setBorder(null);
-        jButtonOnuLink.setContentAreaFilled(false);
-        jButtonOnuLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonOnuLink.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOnuLinkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 420, 120));
-
         jButtonContato.setBorder(null);
         jButtonContato.setContentAreaFilled(false);
         jButtonContato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -79,12 +76,12 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonContatoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 20));
+        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 30));
 
-        jButtonMenuStay.setBorder(null);
-        jButtonMenuStay.setContentAreaFilled(false);
-        jButtonMenuStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonMenuStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
+        jButtonUsarStay.setBorder(null);
+        jButtonUsarStay.setContentAreaFilled(false);
+        jButtonUsarStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonUsarStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 30, 120, 30));
 
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
@@ -94,35 +91,43 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 70, 30));
+        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, 60, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MenuPrincipal.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1410, 800));
+        jButtonMenu2.setBorder(null);
+        jButtonMenu2.setContentAreaFilled(false);
+        jButtonMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenu2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/TelaComoUsar.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonUsarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUsarActionPerformed
-        UsarView usarView = new UsarView();
-        usarView.setVisible(true);
+    private void jButtonMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenu1ActionPerformed
+        MenuView menuView = new MenuView();
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonUsarActionPerformed
+        menuView.setVisible(true);
+    }//GEN-LAST:event_jButtonMenu1ActionPerformed
+
+    private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
+        MenuView menuView = new MenuView();
+        menuView.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonMenuActionPerformed
 
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
-        this.setVisible(false);
         LoginView loginView = new LoginView();
+        this.setVisible(false);
         loginView.setVisible(true);
     }//GEN-LAST:event_jButtonLogOutActionPerformed
-
-    private void jButtonOnuLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuLinkActionPerformed
-        try {
-            URI link = new URI("https://brasil.un.org/pt-br/sdgs");
-            Desktop.getDesktop().browse(link);
-        }catch(Exception erro){
-            System.err.println(erro);
-        }
-    }//GEN-LAST:event_jButtonOnuLinkActionPerformed
 
     private void jButtonContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoActionPerformed
         Contato contato = new Contato();
@@ -131,11 +136,17 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonContatoActionPerformed
 
     private void jButtonProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProjetoActionPerformed
-        ProjetoView projetoView = new ProjetoView();
-        this.setVisible(false);
-        projetoView.setVisible(true);
+       ProjetoView projetoView = new ProjetoView();
+       this.setVisible(false);
+       projetoView.setVisible(true);
     }//GEN-LAST:event_jButtonProjetoActionPerformed
-    
+
+    private void jButtonMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenu2ActionPerformed
+        MenuView menuView = new MenuView();
+        this.setVisible(false);
+        menuView.setVisible(true);
+    }//GEN-LAST:event_jButtonMenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -153,20 +164,20 @@ public class MenuView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsarView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsarView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsarView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UsarView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuView().setVisible(true);
+                new UsarView().setVisible(true);
             }
         });
     }
@@ -174,12 +185,11 @@ public class MenuView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContato;
     private javax.swing.JButton jButtonLogOut;
-    private javax.swing.JButton jButtonMenuStay;
-    private javax.swing.JButton jButtonOnuLink;
+    private javax.swing.JButton jButtonMenu;
+    private javax.swing.JButton jButtonMenu1;
+    private javax.swing.JButton jButtonMenu2;
     private javax.swing.JButton jButtonProjeto;
-    private javax.swing.JButton jButtonUsar;
+    private javax.swing.JButton jButtonUsarStay;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
-
 }
