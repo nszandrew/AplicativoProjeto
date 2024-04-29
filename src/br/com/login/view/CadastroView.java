@@ -90,6 +90,7 @@ public class CadastroView extends javax.swing.JFrame {
 
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -121,8 +122,8 @@ public class CadastroView extends javax.swing.JFrame {
             }
                 LoginView telaLogin = new LoginView();
                 telaLogin.setVisible(true);
-                JOptionPane.showMessageDialog(rootPane, "Cadastro Realizado com Sucesso!");
                 this.setVisible(false);
+                JOptionPane.showMessageDialog(rootPane, "Cadastro Realizado com Sucesso!");
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

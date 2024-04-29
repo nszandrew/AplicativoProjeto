@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class LoginDAO {
     
@@ -29,8 +30,11 @@ public class LoginDAO {
             System.out.println("Possui");            
             MenuView telaMenu = new MenuView();
             telaMenu.setVisible(true);
+            
         } else {
             System.out.println("Nao possui");
+            JOptionPane.showMessageDialog(null, "Email ou senha invalidos", "Tente Novamente", 0);
+            
         }
         
         conexao.close();  

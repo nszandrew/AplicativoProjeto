@@ -95,6 +95,11 @@ public class Contato extends javax.swing.JFrame {
         jButtonMenu.setBorder(null);
         jButtonMenu.setContentAreaFilled(false);
         jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenuActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
 
         jButton1.setBorder(null);
@@ -142,6 +147,12 @@ public class Contato extends javax.swing.JFrame {
         this.setVisible(false);
         projetoView.setVisible(true);
     }//GEN-LAST:event_jButtonProjetoActionPerformed
+
+    private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
+        MenuView menuView = new MenuView();
+        this.setVisible(false);
+        menuView.setVisible(true);
+    }//GEN-LAST:event_jButtonMenuActionPerformed
 
     /**
      * @param args the command line arguments

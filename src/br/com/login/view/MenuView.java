@@ -35,6 +35,7 @@ public class MenuView extends javax.swing.JFrame {
         jButtonContato = new javax.swing.JButton();
         jButtonMenuStay = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
+        jButtonCrieProjeto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,6 +96,11 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 70, 30));
+
+        jButtonCrieProjeto.setBorder(null);
+        jButtonCrieProjeto.setContentAreaFilled(false);
+        jButtonCrieProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 370, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MenuPrincipal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1410, 800));
@@ -173,12 +179,13 @@ public class MenuView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContato;
+    private javax.swing.JButton jButtonCrieProjeto;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenuStay;
     private javax.swing.JButton jButtonOnuLink;
     private javax.swing.JButton jButtonProjeto;
     private javax.swing.JButton jButtonUsar;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
 

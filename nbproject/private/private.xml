@@ -5,9 +5,13 @@
         <group>
             <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/controller/LoginController.java</file>
             <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/CadastroView.java</file>
+            <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/MenuView.java</file>
+            <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/ProjetoView.java</file>
             <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/dao/LoginDAO.java</file>
+            <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/Contato.java</file>
             <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/dao/Conexao.java</file>
             <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/LoginView.java</file>
+            <file>file:/C:/Users/Andrew/Documents/NetBeansProjects/TelaDeLogin-main/src/br/com/login/view/UsarView.java</file>
         </group>
     </open-files>
 </project-private>
