@@ -33,6 +33,7 @@ public class UsarView extends javax.swing.JFrame {
         jButtonUsarStay = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
         jButtonMenu2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,7 +47,7 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonMenu1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 80, 20));
+        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 100, 10));
 
         jButtonMenu.setBorder(null);
         jButtonMenu.setContentAreaFilled(false);
@@ -56,7 +57,7 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 50, 20));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -66,7 +67,7 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonLogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 40, 40));
+        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonContato.setBorder(null);
         jButtonContato.setContentAreaFilled(false);
@@ -76,12 +77,12 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonContatoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 30));
+        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 70, 20));
 
         jButtonUsarStay.setBorder(null);
         jButtonUsarStay.setContentAreaFilled(false);
         jButtonUsarStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonUsarStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 30, 120, 30));
+        getContentPane().add(jButtonUsarStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
 
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
@@ -91,7 +92,7 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, 60, 30));
+        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 30, 60, 20));
 
         jButtonMenu2.setBorder(null);
         jButtonMenu2.setContentAreaFilled(false);
@@ -101,11 +102,21 @@ public class UsarView extends javax.swing.JFrame {
                 jButtonMenu2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
+        getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 20, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/TelaComoUsar.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, 80, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/UsarView.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 800));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
         setLocationRelativeTo(null);
@@ -147,6 +158,12 @@ public class UsarView extends javax.swing.JFrame {
         menuView.setVisible(true);
     }//GEN-LAST:event_jButtonMenu2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ProjetoView projetoView = new ProjetoView();
+        this.setVisible(false);
+        projetoView.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -183,6 +200,7 @@ public class UsarView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonContato;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenu;

@@ -50,7 +50,7 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonUsarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 23, 120, 40));
+        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -60,7 +60,7 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonLogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 40, 40));
+        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonOnuLink.setBorder(null);
         jButtonOnuLink.setContentAreaFilled(false);
@@ -70,7 +70,7 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonOnuLinkActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 420, 120));
+        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 420, 120));
 
         jButtonContato.setBorder(null);
         jButtonContato.setContentAreaFilled(false);
@@ -80,12 +80,12 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonContatoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 20));
+        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 70, 20));
 
         jButtonMenuStay.setBorder(null);
         jButtonMenuStay.setContentAreaFilled(false);
         jButtonMenuStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonMenuStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
+        getContentPane().add(jButtonMenuStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 50, 20));
 
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
@@ -95,15 +95,15 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 70, 30));
+        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 30, 70, 20));
 
         jButtonCrieProjeto.setBorder(null);
         jButtonCrieProjeto.setContentAreaFilled(false);
         jButtonCrieProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 370, 60));
+        getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 330, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MenuPrincipal.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 1410, 800));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MainMenu.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, -1));
 
         pack();
         setLocationRelativeTo(null);

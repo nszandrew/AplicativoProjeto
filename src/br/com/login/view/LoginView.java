@@ -94,8 +94,15 @@ public class LoginView extends javax.swing.JFrame {
         } else {
             
         try {
-        LoginController login = new LoginController();
-        login.loginUsuario(this);
+            LoginController login = new LoginController();
+            boolean resultado = login.loginUsuario(this);
+        if (resultado) {
+            MenuView menuView = new MenuView();
+            menuView.setVisible(true);
+            this.setVisible(false);
+        }else {
+        JOptionPane.showMessageDialog(null, "Email ou senha invalidos", "Tente Novamente", 0);
+        }
         } catch(SQLException sql) {
         
         }

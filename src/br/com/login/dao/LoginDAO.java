@@ -19,7 +19,7 @@ public class LoginDAO {
         conexao.close();                
     }         
     
-    public void login(String email, String senha) throws SQLException{
+    public boolean login(String email, String senha) throws SQLException{
         Connection conexao = new Conexao().getConnection();
         String sql = "SELECT email,senha FROM login WHERE email = '"+email+"' AND senha = '"+senha+"'";
         System.out.println(sql);
@@ -28,15 +28,16 @@ public class LoginDAO {
         
         if (rs.next()){
             System.out.println("Possui");            
-            MenuView telaMenu = new MenuView();
-            telaMenu.setVisible(true);
+            conexao.close(); 
+            return true;
             
         } else {
-            System.out.println("Nao possui");
-            JOptionPane.showMessageDialog(null, "Email ou senha invalidos", "Tente Novamente", 0);
+            System.out.println("Nao possui");            
+            conexao.close();
+            return false;
             
         }
         
-        conexao.close();  
+         
     }
 }

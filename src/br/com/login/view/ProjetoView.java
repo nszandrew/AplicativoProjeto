@@ -46,7 +46,7 @@ public class ProjetoView extends javax.swing.JFrame {
                 jButtonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 50, 20));
 
         jButtonUsar.setBorder(null);
         jButtonUsar.setContentAreaFilled(false);
@@ -56,12 +56,12 @@ public class ProjetoView extends javax.swing.JFrame {
                 jButtonUsarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 30, 120, 30));
+        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
 
         jButtonProjetoStay.setBorder(null);
         jButtonProjetoStay.setContentAreaFilled(false);
         jButtonProjetoStay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonProjetoStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, 60, 30));
+        getContentPane().add(jButtonProjetoStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 30, 70, 20));
 
         jButtonContato.setBorder(null);
         jButtonContato.setContentAreaFilled(false);
@@ -71,7 +71,7 @@ public class ProjetoView extends javax.swing.JFrame {
                 jButtonContatoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 80, 20));
+        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 70, 20));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -81,7 +81,7 @@ public class ProjetoView extends javax.swing.JFrame {
                 jButtonLogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1355, 20, 40, 40));
+        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonMenu2.setBorder(null);
         jButtonMenu2.setContentAreaFilled(false);
@@ -91,10 +91,10 @@ public class ProjetoView extends javax.swing.JFrame {
                 jButtonMenu2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
+        getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 30, 30));
 
-        jLabelProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/TelaProjeto.png"))); // NOI18N
-        getContentPane().add(jLabelProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 800));
+        jLabelProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ProjectView.png"))); // NOI18N
+        getContentPane().add(jLabelProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
         setLocationRelativeTo(null);

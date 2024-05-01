@@ -35,7 +35,7 @@ public class Contato extends javax.swing.JFrame {
         jButtonProjeto = new javax.swing.JButton();
         jButtonOnuView = new javax.swing.JButton();
         jButtonMenu = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonContato = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,7 +50,7 @@ public class Contato extends javax.swing.JFrame {
                 jButtonMenu1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
+        getContentPane().add(jButtonMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 50, 20));
 
         jButtonUsar.setBorder(null);
         jButtonUsar.setContentAreaFilled(false);
@@ -60,7 +60,7 @@ public class Contato extends javax.swing.JFrame {
                 jButtonUsarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 30, 120, 30));
+        getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
 
         jButtonLogOut.setBorder(null);
         jButtonLogOut.setContentAreaFilled(false);
@@ -70,7 +70,7 @@ public class Contato extends javax.swing.JFrame {
                 jButtonLogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 20, 40, 40));
+        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
@@ -80,7 +80,7 @@ public class Contato extends javax.swing.JFrame {
                 jButtonProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, 70, 30));
+        getContentPane().add(jButtonProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 30, 70, 20));
 
         jButtonOnuView.setBorder(null);
         jButtonOnuView.setContentAreaFilled(false);
@@ -90,7 +90,7 @@ public class Contato extends javax.swing.JFrame {
                 jButtonOnuViewActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonOnuView, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 560, 520));
+        getContentPane().add(jButtonOnuView, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 500, 470));
 
         jButtonMenu.setBorder(null);
         jButtonMenu.setContentAreaFilled(false);
@@ -100,15 +100,15 @@ public class Contato extends javax.swing.JFrame {
                 jButtonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 30, 30));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 30, 30));
 
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 90, 30));
+        jButtonContato.setBorder(null);
+        jButtonContato.setContentAreaFilled(false);
+        jButtonContato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 80, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Contato.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ContactView.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -190,7 +190,7 @@ public class Contato extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonContato;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenu;
     private javax.swing.JButton jButtonMenu1;
