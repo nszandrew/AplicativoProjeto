@@ -4,6 +4,8 @@
  */
 package br.com.login.view;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author Andrew
@@ -15,6 +17,7 @@ public class UsarView extends javax.swing.JFrame {
      */
     public UsarView() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -210,4 +213,8 @@ public class UsarView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonUsarStay;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+        private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
+
 }

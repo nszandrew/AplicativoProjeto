@@ -5,10 +5,12 @@
 package br.com.login.view;
 
 import br.com.login.controller.LoginController;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
 
 
 /**
@@ -22,6 +24,7 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -87,6 +90,7 @@ public class LoginView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonRealizarCadastroActionPerformed
 
+    
     private void jButtonEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrar1ActionPerformed
         
         if(jTextFieldEmail.getText().matches("")|| jPasswordFieldSenha.getText().matches("")){
@@ -104,7 +108,7 @@ public class LoginView extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Email ou senha invalidos", "Tente Novamente", 0);
         }
         } catch(SQLException sql) {
-        
+        JOptionPane.showMessageDialog(null, "Erro SQL", "Tente Novamente", 0);
         }
 
     }//GEN-LAST:event_jButtonEntrar1ActionPerformed
@@ -171,4 +175,8 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JTextField jTextFieldEmail;
     // End of variables declaration//GEN-END:variables
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

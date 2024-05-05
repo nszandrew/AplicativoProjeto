@@ -5,6 +5,7 @@
 package br.com.login.view;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.net.URI;
 
 /**
@@ -18,6 +19,7 @@ public class Contato extends javax.swing.JFrame {
      */
     public Contato() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -199,4 +201,7 @@ public class Contato extends javax.swing.JFrame {
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

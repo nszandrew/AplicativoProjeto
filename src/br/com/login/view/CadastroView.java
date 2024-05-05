@@ -5,6 +5,7 @@
 package br.com.login.view;
 
 import br.com.login.controller.LoginController;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,9 @@ public class CadastroView extends javax.swing.JFrame {
      */
     public CadastroView() {
         initComponents();
+        setIcon();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -119,6 +122,7 @@ public class CadastroView extends javax.swing.JFrame {
                 cadastro.cadastroUsuario(this);
             } catch (SQLException exe) {
                 Logger.getLogger(CadastroView.class.getName()).log(Level.SEVERE, null, exe);
+                JOptionPane.showMessageDialog(rootPane, "Erro SQL" + exe );
             }
                 LoginView telaLogin = new LoginView();
                 telaLogin.setVisible(true);
@@ -169,7 +173,7 @@ public class CadastroView extends javax.swing.JFrame {
         this.jTextFieldTelefone = jTextFieldTelefone;
     }
     
-    
+
     
     
     
@@ -177,6 +181,8 @@ public class CadastroView extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -208,6 +214,8 @@ public class CadastroView extends javax.swing.JFrame {
             }
         });
     }
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -219,4 +227,8 @@ public class CadastroView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
+
+        private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

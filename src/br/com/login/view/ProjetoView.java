@@ -4,6 +4,8 @@
  */
 package br.com.login.view;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author Andrew
@@ -15,6 +17,7 @@ public class ProjetoView extends javax.swing.JFrame {
      */
     public ProjetoView() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -174,4 +177,7 @@ public class ProjetoView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabelProjeto;
     // End of variables declaration//GEN-END:variables
+        private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

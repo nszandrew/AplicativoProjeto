@@ -5,6 +5,7 @@
 package br.com.login.view;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.net.URI;
 
 /**
@@ -18,6 +19,7 @@ public class MenuView extends javax.swing.JFrame {
      */
     public MenuView() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -146,6 +148,7 @@ public class MenuView extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -188,5 +191,7 @@ public class MenuView extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
-
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }
