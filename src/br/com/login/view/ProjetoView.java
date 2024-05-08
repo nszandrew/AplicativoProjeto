@@ -33,11 +33,12 @@ public class ProjetoView extends javax.swing.JFrame {
         jButtonUsar = new javax.swing.JButton();
         jButtonProjetoStay = new javax.swing.JButton();
         jButtonContato = new javax.swing.JButton();
-        jButtonLogOut = new javax.swing.JButton();
+        jButtonProfile = new javax.swing.JButton();
         jButtonMenu2 = new javax.swing.JButton();
         jLabelProjeto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Projeto");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -76,15 +77,15 @@ public class ProjetoView extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 70, 20));
 
-        jButtonLogOut.setBorder(null);
-        jButtonLogOut.setContentAreaFilled(false);
-        jButtonLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonLogOut.addActionListener(new java.awt.event.ActionListener() {
+        jButtonProfile.setBorder(null);
+        jButtonProfile.setContentAreaFilled(false);
+        jButtonProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLogOutActionPerformed(evt);
+                jButtonProfileActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
+        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonMenu2.setBorder(null);
         jButtonMenu2.setContentAreaFilled(false);
@@ -127,11 +128,10 @@ public class ProjetoView extends javax.swing.JFrame {
        contato.setVisible(true);
     }//GEN-LAST:event_jButtonContatoActionPerformed
 
-    private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
-        LoginView loginView = new LoginView();
-        this.setVisible(false);
-        loginView.setVisible(true);
-    }//GEN-LAST:event_jButtonLogOutActionPerformed
+    private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
+        ProfileView perfilView = new ProfileView();
+        perfilView.setVisible(true);
+    }//GEN-LAST:event_jButtonProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,9 +170,9 @@ public class ProjetoView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContato;
-    private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenu;
     private javax.swing.JButton jButtonMenu2;
+    private javax.swing.JButton jButtonProfile;
     private javax.swing.JButton jButtonProjetoStay;
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabelProjeto;

@@ -33,7 +33,6 @@ public class MenuView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonUsar = new javax.swing.JButton();
-        jButtonLogOut = new javax.swing.JButton();
         jButtonOnuLink = new javax.swing.JButton();
         jButtonContato = new javax.swing.JButton();
         jButtonMenuStay = new javax.swing.JButton();
@@ -45,6 +44,7 @@ public class MenuView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -57,16 +57,6 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
-
-        jButtonLogOut.setBorder(null);
-        jButtonLogOut.setContentAreaFilled(false);
-        jButtonLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonLogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLogOutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonOnuLink.setBorder(null);
         jButtonOnuLink.setContentAreaFilled(false);
@@ -129,15 +119,15 @@ public class MenuView extends javax.swing.JFrame {
         });
         getContentPane().add(jToggleButtonOds9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 560, 120, 120));
 
-        jButtonProfile.setText("Ola, usuario");
         jButtonProfile.setBorder(null);
+        jButtonProfile.setContentAreaFilled(false);
         jButtonProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonProfileActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, 20));
+        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MainMenu.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, -1));
@@ -151,12 +141,6 @@ public class MenuView extends javax.swing.JFrame {
         usarView.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonUsarActionPerformed
-
-    private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
-        this.setVisible(false);
-        LoginView loginView = new LoginView();
-        loginView.setVisible(true);
-    }//GEN-LAST:event_jButtonLogOutActionPerformed
 
     private void jButtonOnuLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuLinkActionPerformed
         try {
@@ -242,7 +226,6 @@ public class MenuView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContato;
     private javax.swing.JButton jButtonCrieProjeto;
-    private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenuStay;
     private javax.swing.JButton jButtonOds8;
     private javax.swing.JButton jButtonOnuLink;

@@ -4,6 +4,8 @@
  */
 package br.com.login.view;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author 824148029
@@ -15,6 +17,7 @@ public class ProfileView extends javax.swing.JFrame {
      */
     public ProfileView() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -26,16 +29,35 @@ public class ProfileView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonLogOut = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setTitle("Perfil");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Purple and Pink Flat Color UI Login Page Simple Desktop UI Prototype (2).png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-340, 0, 700, 430));
+        jButtonLogOut.setBorder(null);
+        jButtonLogOut.setContentAreaFilled(false);
+        jButtonLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLogOutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 180, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Screenshot 2024-05-08 000457.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 540));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
+        this.setVisible(false);
+        LoginView loginView = new LoginView();
+        loginView.setVisible(true);
+    }//GEN-LAST:event_jButtonLogOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -73,6 +95,10 @@ public class ProfileView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonLogOut;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

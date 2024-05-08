@@ -9,7 +9,7 @@ public class Conexao {
     
     
     public Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/aplicacao?user=root&password=anima123";    
+        String url = "jdbc:mysql://localhost:3306/aplicacao?user=root&password=12345";    
         Connection conexao = DriverManager.getConnection(url);
         return conexao;
     }

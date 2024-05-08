@@ -33,14 +33,15 @@ public class Contato extends javax.swing.JFrame {
 
         jButtonMenu1 = new javax.swing.JButton();
         jButtonUsar = new javax.swing.JButton();
-        jButtonLogOut = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
         jButtonOnuView = new javax.swing.JButton();
         jButtonMenu = new javax.swing.JButton();
         jButtonContato = new javax.swing.JButton();
+        jButtonProfile = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Contato");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,16 +64,6 @@ public class Contato extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonUsar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, 110, 20));
-
-        jButtonLogOut.setBorder(null);
-        jButtonLogOut.setContentAreaFilled(false);
-        jButtonLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonLogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLogOutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
 
         jButtonProjeto.setBorder(null);
         jButtonProjeto.setContentAreaFilled(false);
@@ -109,6 +100,16 @@ public class Contato extends javax.swing.JFrame {
         jButtonContato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jButtonContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 80, 20));
 
+        jButtonProfile.setBorder(null);
+        jButtonProfile.setContentAreaFilled(false);
+        jButtonProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProfileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 30, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ContactView.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, -1));
 
@@ -128,12 +129,6 @@ public class Contato extends javax.swing.JFrame {
        this.setVisible(false);
        usarView.setVisible(true);
     }//GEN-LAST:event_jButtonUsarActionPerformed
-
-    private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
-        LoginView loginView = new LoginView();
-        this.setVisible(false);
-        loginView.setVisible(true);
-    }//GEN-LAST:event_jButtonLogOutActionPerformed
 
     private void jButtonOnuViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuViewActionPerformed
                 try {
@@ -155,6 +150,11 @@ public class Contato extends javax.swing.JFrame {
         this.setVisible(false);
         menuView.setVisible(true);
     }//GEN-LAST:event_jButtonMenuActionPerformed
+
+    private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
+        ProfileView perfilView = new ProfileView();
+        perfilView.setVisible(true);
+    }//GEN-LAST:event_jButtonProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,10 +193,10 @@ public class Contato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContato;
-    private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenu;
     private javax.swing.JButton jButtonMenu1;
     private javax.swing.JButton jButtonOnuView;
+    private javax.swing.JButton jButtonProfile;
     private javax.swing.JButton jButtonProjeto;
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabel1;
