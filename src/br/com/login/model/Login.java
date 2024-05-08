@@ -12,6 +12,10 @@ public class Login {
         this.telefone = telefone;
     }
     
+    public Login(){
+    
+   }
+    
     public void cadastrar(String nome, String email, String senha, int telefone) {
         this.nome = nome;
         this.email = email;

@@ -4,6 +4,7 @@
  */
 package br.com.login.view;
 
+import br.com.login.model.Login;
 import java.awt.Desktop;
 import java.awt.Toolkit;
 import java.net.URI;
@@ -38,6 +39,9 @@ public class MenuView extends javax.swing.JFrame {
         jButtonMenuStay = new javax.swing.JButton();
         jButtonProjeto = new javax.swing.JButton();
         jButtonCrieProjeto = new javax.swing.JButton();
+        jButtonOds8 = new javax.swing.JButton();
+        jToggleButtonOds9 = new javax.swing.JToggleButton();
+        jButtonProfile = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +76,7 @@ public class MenuView extends javax.swing.JFrame {
                 jButtonOnuLinkActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 420, 120));
+        getContentPane().add(jButtonOnuLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 120, 120));
 
         jButtonContato.setBorder(null);
         jButtonContato.setContentAreaFilled(false);
@@ -104,6 +108,37 @@ public class MenuView extends javax.swing.JFrame {
         jButtonCrieProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 330, 60));
 
+        jButtonOds8.setBorder(null);
+        jButtonOds8.setContentAreaFilled(false);
+        jButtonOds8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonOds8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOds8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonOds8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 567, 110, 110));
+
+        jToggleButtonOds9.setBorder(null);
+        jToggleButtonOds9.setBorderPainted(false);
+        jToggleButtonOds9.setContentAreaFilled(false);
+        jToggleButtonOds9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButtonOds9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonOds9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButtonOds9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 560, 120, 120));
+
+        jButtonProfile.setText("Ola, usuario");
+        jButtonProfile.setBorder(null);
+        jButtonProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProfileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/MainMenu.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, -1));
 
@@ -125,7 +160,7 @@ public class MenuView extends javax.swing.JFrame {
 
     private void jButtonOnuLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnuLinkActionPerformed
         try {
-            URI link = new URI("https://brasil.un.org/pt-br/sdgs");
+            URI link = new URI("https://brasil.un.org/pt-br/sdgs/10");
             Desktop.getDesktop().browse(link);
         }catch(Exception erro){
             System.err.println(erro);
@@ -143,6 +178,30 @@ public class MenuView extends javax.swing.JFrame {
         this.setVisible(false);
         projetoView.setVisible(true);
     }//GEN-LAST:event_jButtonProjetoActionPerformed
+
+    private void jButtonOds8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOds8ActionPerformed
+               try {
+            URI link = new URI("https://brasil.un.org/pt-br/sdgs/8");
+            Desktop.getDesktop().browse(link);
+        }catch(Exception erro){
+            System.err.println(erro);
+        }   
+    }//GEN-LAST:event_jButtonOds8ActionPerformed
+
+    private void jToggleButtonOds9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonOds9ActionPerformed
+        
+        try {
+            URI link = new URI("https://brasil.un.org/pt-br/sdgs/9");
+            Desktop.getDesktop().browse(link);
+        }catch(Exception erro){
+            System.err.println(erro);
+        } 
+    }//GEN-LAST:event_jToggleButtonOds9ActionPerformed
+
+    private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
+       ProfileView perfilView = new ProfileView();
+       perfilView.setVisible(true);
+    }//GEN-LAST:event_jButtonProfileActionPerformed
     
     /**
      * @param args the command line arguments
@@ -185,10 +244,13 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCrieProjeto;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JButton jButtonMenuStay;
+    private javax.swing.JButton jButtonOds8;
     private javax.swing.JButton jButtonOnuLink;
+    private javax.swing.JButton jButtonProfile;
     private javax.swing.JButton jButtonProjeto;
     private javax.swing.JButton jButtonUsar;
     public javax.swing.JLabel jLabel1;
+    private javax.swing.JToggleButton jToggleButtonOds9;
     // End of variables declaration//GEN-END:variables
 
     private void setIcon() {

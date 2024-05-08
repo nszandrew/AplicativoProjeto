@@ -124,10 +124,10 @@ public class CadastroView extends javax.swing.JFrame {
                 Logger.getLogger(CadastroView.class.getName()).log(Level.SEVERE, null, exe);
                 JOptionPane.showMessageDialog(rootPane, "Erro SQL" + exe );
             }
-                LoginView telaLogin = new LoginView();
-                telaLogin.setVisible(true);
-                this.setVisible(false);
-                JOptionPane.showMessageDialog(rootPane, "Cadastro Realizado com Sucesso!");
+                //LoginView telaLogin = new LoginView();
+                //telaLogin.setVisible(true);
+                //this.setVisible(false);
+                //JOptionPane.showMessageDialog(rootPane, "Cadastro Realizado com Sucesso!");
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
