@@ -30,6 +30,8 @@ public class ProfileView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonLogOut = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jTextFieldEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Perfil");
@@ -46,6 +48,21 @@ public class ProfileView extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 180, 30));
 
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 180, 30));
+
+        jTextFieldEmail.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEmail.setBorder(null);
+        jTextFieldEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 230, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Screenshot 2024-05-08 000457.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 540));
 
@@ -55,9 +72,17 @@ public class ProfileView extends javax.swing.JFrame {
 
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
         this.setVisible(false);
+        MenuView menuView = new MenuView();
+        menuView.setVisible(false);
         LoginView loginView = new LoginView();
         loginView.setVisible(true);
     }//GEN-LAST:event_jButtonLogOutActionPerformed
+
+    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
+        // TODO add your handling code here:
+            LoginView loginView = new LoginView();
+            jTextFieldEmail.setText(loginView.getjTextFieldEmail().getText());               
+    }//GEN-LAST:event_jTextFieldEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,7 +110,8 @@ public class ProfileView extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ProfileView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+       
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -95,8 +121,10 @@ public class ProfileView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextFieldEmail;
     // End of variables declaration//GEN-END:variables
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));

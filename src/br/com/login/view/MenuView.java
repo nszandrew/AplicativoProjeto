@@ -96,7 +96,12 @@ public class MenuView extends javax.swing.JFrame {
         jButtonCrieProjeto.setBorder(null);
         jButtonCrieProjeto.setContentAreaFilled(false);
         jButtonCrieProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 330, 60));
+        jButtonCrieProjeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrieProjetoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCrieProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 330, 50));
 
         jButtonOds8.setBorder(null);
         jButtonOds8.setContentAreaFilled(false);
@@ -186,6 +191,13 @@ public class MenuView extends javax.swing.JFrame {
        ProfileView perfilView = new ProfileView();
        perfilView.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed
+
+    private void jButtonCrieProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrieProjetoActionPerformed
+        // TODO add your handling code here:
+        CadastroProjetoView projetoView = new CadastroProjetoView();
+        projetoView.setVisible(true);
+       
+    }//GEN-LAST:event_jButtonCrieProjetoActionPerformed
     
     /**
      * @param args the command line arguments
