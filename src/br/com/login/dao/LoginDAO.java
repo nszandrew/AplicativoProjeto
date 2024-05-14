@@ -1,12 +1,10 @@
 package br.com.login.dao;
 
-import br.com.login.view.LoginView;
-import br.com.login.view.MenuView;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 
 public class LoginDAO {
     
@@ -40,4 +38,14 @@ public class LoginDAO {
         
          
     }
+    //public void infoUsuario(int id)throws SQLException{
+        //Connection conexao = new Conexao().getConnection();
+       // String sql = "SELECT nome, email, telefone FROM login WHERE id = ?";
+        //PreparedStatement statment = conexao.prepareStatement(sql);
+        //statment.setInt(1, id);
+        //ResultSet rs = statment.executeQuery();
+        //conexao.close();
+        
+    //}
+    
 }

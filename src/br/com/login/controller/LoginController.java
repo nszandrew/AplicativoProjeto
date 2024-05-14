@@ -5,12 +5,16 @@ import br.com.login.controller.regex.Regex;
 import br.com.login.dao.Conexao;
 import br.com.login.dao.LoginDAO;
 import br.com.login.hashcode.HashCode;
+import br.com.login.model.Login;
 import br.com.login.view.CadastroView;
 import br.com.login.view.LoginView;
 import br.com.login.view.MenuView;
+import br.com.login.view.ProfileView;
+import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 public class LoginController {
     
@@ -32,7 +36,6 @@ public class LoginController {
             JOptionPane.showMessageDialog(null, "Credencias invalidas \nDigite o email seuemail@dominio.com \nDigite seu telefone xx-xxxxx-xxxx");
             
         }
-      //cadastro.cadastrarUsuario(view.getjTextFieldNome().getText(), view.getjTextFieldEmail().getText(), pass, view.getjTextFieldTelefone().getText());
     
     }
     
@@ -44,6 +47,31 @@ public class LoginController {
       String senha = hs.hashPassword(senhaDigitada);      
       return login.login(view.getjTextFieldEmail().getText(), senha);
      
+    }
+    
+    public String buscarId(int id){
+      String sql = "SELECT email FROM login WHERE id = ?";
+    try (Connection conexao = new Conexao().getConnection();
+         PreparedStatement statment = conexao.prepareStatement(sql)) {
+         statment.setInt(1, id);
+         try(ResultSet rs = statment.executeQuery()){
+             if (rs.next()){
+                 //ProfileView pf = new ProfileView();
+                 //Login login = new Login();
+                 //pf.setJTextFieldEmail(rs.getString("email"));
+                 return rs.getString("email");
+                 
+                                       
+             }
+         
+         }
+      
+      }catch (SQLException e){
+          throw new RuntimeException(e);
+      }
+        return null;
+
+      
     
     }
 }

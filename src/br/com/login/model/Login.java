@@ -4,9 +4,9 @@ package br.com.login.model;
 
 public class Login {
     private String nome, email, senha;
-    private int telefone;
+    private String telefone;
 
-    public Login(String email, String senha, int telefone) {
+    public Login(String email, String senha, String telefone) {
         this.email = email;
         this.senha = senha;
         this.telefone = telefone;
@@ -16,7 +16,7 @@ public class Login {
     
    }
     
-    public void cadastrar(String nome, String email, String senha, int telefone) {
+    public void cadastrar(String nome, String email, String senha, String telefone) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -47,11 +47,11 @@ public class Login {
         this.senha = senha;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     

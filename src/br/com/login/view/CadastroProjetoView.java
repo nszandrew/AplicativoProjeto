@@ -27,17 +27,11 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     private void initComponents() {
 
         ComboBoxCadastroProjeto = new javax.swing.JComboBox<>();
-        checkbox1 = new java.awt.Checkbox();
-        checkbox2 = new java.awt.Checkbox();
-        checkbox3 = new java.awt.Checkbox();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldData = new javax.swing.JTextField();
+        jTextFieldDescricao = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -51,44 +45,27 @@ public class CadastroProjetoView extends javax.swing.JFrame {
                 ComboBoxCadastroProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(ComboBoxCadastroProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 230, 20));
+        getContentPane().add(ComboBoxCadastroProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 240, 20));
 
-        checkbox1.setBackground(new java.awt.Color(255, 255, 255));
-        checkbox1.setLabel("Pendente");
-        getContentPane().add(checkbox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 70, -1));
+        jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNome.setBorder(null);
+        jTextFieldNome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 230, 20));
 
-        checkbox2.setBackground(new java.awt.Color(255, 255, 255));
-        checkbox2.setLabel("Andamento");
-        getContentPane().add(checkbox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, -1, -1));
+        jTextFieldData.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldData.setBorder(null);
+        getContentPane().add(jTextFieldData, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 20));
 
-        checkbox3.setBackground(new java.awt.Color(255, 255, 255));
-        checkbox3.setLabel("Concluido");
-        getContentPane().add(checkbox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, -1, -1));
+        jTextFieldDescricao.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDescricao.setBorder(null);
+        getContentPane().add(jTextFieldDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 230, 20));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 230, 20));
-
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(null);
-        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 230, 20));
-
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setBorder(null);
-        jTextField3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField3.setEnabled(false);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 230, 20));
-
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setBorder(null);
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 230, 20));
-
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setBorder(null);
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 230, 20));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Screenshot 2024-05-12 153155.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/AdicionarProjeto.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
@@ -99,6 +76,10 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     private void ComboBoxCadastroProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCadastroProjetoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxCadastroProjetoActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,14 +118,9 @@ public class CadastroProjetoView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxCadastroProjeto;
-    private java.awt.Checkbox checkbox1;
-    private java.awt.Checkbox checkbox2;
-    private java.awt.Checkbox checkbox3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextFieldData;
+    private javax.swing.JTextField jTextFieldDescricao;
+    private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }
