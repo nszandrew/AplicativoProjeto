@@ -129,8 +129,9 @@ public class ProjetoView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonContatoActionPerformed
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
-        ProfileView perfilView = new ProfileView();
-        perfilView.setVisible(true);
+       this.setVisible(false);
+       ProfileView perfilView = new ProfileView();
+       perfilView.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed
 
     /**

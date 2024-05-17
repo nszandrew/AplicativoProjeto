@@ -1,25 +1,45 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package br.com.login.view;
 
 import br.com.login.controller.LoginController;
+import br.com.login.model.InformacoesLogin;
 import java.awt.Toolkit;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author 824148029
- */
 public class ProfileView extends javax.swing.JFrame {
+    private LoginView loginView;
+    private String email;
+    
+        public ProfileView(LoginView loginView) {
+        initComponents();
+        this.loginView = loginView; // Salva a instância de LoginView
+        setIcon();
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+     
+     
     public void setJTextFieldEmail(String email) {
-    jTextFieldEmail.setText(email);
-        System.out.println(email);
+        jTextFieldEmail.setText(email);    
 }
-    
-    
+    public void setjTextFieldNome(String nome) {
+        jTextFieldNome.setText(nome);
+    }
+    public void setjTextFieldSenha(String senha) {
+        jTextFieldSenha.setText(senha);
+    }
+    public void setjTextFieldTelefone(String Telefone) {
+        jTextFieldTelefone.setText(Telefone);
+    }
     
     
     public ProfileView() {
@@ -33,8 +53,11 @@ public class ProfileView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonLogOut = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonEditarPerfil = new javax.swing.JButton();
         jTextFieldEmail = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldSenha = new javax.swing.JTextField();
+        jTextFieldTelefone = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Perfil");
@@ -51,16 +74,17 @@ public class ProfileView extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 180, 30));
 
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEditarPerfil.setBorder(null);
+        jButtonEditarPerfil.setContentAreaFilled(false);
+        jButtonEditarPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEditarPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonEditarPerfilActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 180, 30));
+        getContentPane().add(jButtonEditarPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 190, 30));
 
+        jTextFieldEmail.setEditable(false);
         jTextFieldEmail.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldEmail.setBorder(null);
         jTextFieldEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -70,6 +94,26 @@ public class ProfileView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 230, 20));
+
+        jTextFieldNome.setEditable(false);
+        jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldNome.setBorder(null);
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 230, 20));
+
+        jTextFieldSenha.setEditable(false);
+        jTextFieldSenha.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldSenha.setBorder(null);
+        getContentPane().add(jTextFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 230, 30));
+
+        jTextFieldTelefone.setEditable(false);
+        jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTelefone.setBorder(null);
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 420, 230, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/Screenshot 2024-05-08 000457.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 540));
@@ -83,32 +127,52 @@ public class ProfileView extends javax.swing.JFrame {
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
         this.setVisible(false);
         MenuView menuView = new MenuView();
-        menuView.setVisible(false);
-        LoginView loginView = new LoginView();
-        loginView.setVisible(true);
+        menuView.setVisible(true);
     }//GEN-LAST:event_jButtonLogOutActionPerformed
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
-        // TODO add your handling code here:
-           //LoginController loginCon = new LoginController();
-           //String email = loginCon.buscarId(1);
-           //setJTextFieldEmail(email);
-
-          
-            
+        // TODO add your handling code here:      
     }//GEN-LAST:event_jTextFieldEmailActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonEditarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarPerfilActionPerformed
         // TODO add your handling code here:
            LoginController loginCon = new LoginController();
-           String email = loginCon.buscarId(1);
-           setJTextFieldEmail(email);        
-    }//GEN-LAST:event_jButton1ActionPerformed
+           InformacoesLogin usuario = null;
+        try {
+           String email = this.getEmail();
+           System.out.println(email);
+           usuario = loginCon.buscarInformacoes(email);
+        if(usuario != null) {   
+           setJTextFieldEmail(usuario.getEmail());
+           jTextFieldEmail.setEditable(true);    
+           
+           setjTextFieldNome(usuario.getNome());
+           jTextFieldNome.setEditable(true);
+           
+           setjTextFieldSenha(usuario.getSenha());
+           jTextFieldSenha.setEditable(true);
+           
+           setjTextFieldTelefone(usuario.getTelefone());
+           jTextFieldTelefone.setEditable(true);
+        }   
+        } catch (SQLException ex) {
+            Logger.getLogger(ProfileView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+
+           
+                                         
+    }//GEN-LAST:event_jButtonEditarPerfilActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -142,10 +206,13 @@ public class ProfileView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonEditarPerfil;
     private javax.swing.JButton jButtonLogOut;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldSenha;
+    private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));

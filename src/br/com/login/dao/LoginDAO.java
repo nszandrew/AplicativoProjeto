@@ -37,15 +37,5 @@ public class LoginDAO {
         }
         
          
-    }
-    //public void infoUsuario(int id)throws SQLException{
-        //Connection conexao = new Conexao().getConnection();
-       // String sql = "SELECT nome, email, telefone FROM login WHERE id = ?";
-        //PreparedStatement statment = conexao.prepareStatement(sql);
-        //statment.setInt(1, id);
-        //ResultSet rs = statment.executeQuery();
-        //conexao.close();
-        
-    //}
-    
+    }    
 }

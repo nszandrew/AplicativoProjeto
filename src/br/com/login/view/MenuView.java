@@ -15,9 +15,8 @@ import java.net.URI;
  */
 public class MenuView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuView
-     */
+    
+    
     public MenuView() {
         initComponents();
         setIcon();
@@ -188,6 +187,7 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButtonOds9ActionPerformed
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
+       this.setVisible(false);
        ProfileView perfilView = new ProfileView();
        perfilView.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed

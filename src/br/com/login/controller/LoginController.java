@@ -5,16 +5,16 @@ import br.com.login.controller.regex.Regex;
 import br.com.login.dao.Conexao;
 import br.com.login.dao.LoginDAO;
 import br.com.login.hashcode.HashCode;
-import br.com.login.model.Login;
 import br.com.login.view.CadastroView;
 import br.com.login.view.LoginView;
 import br.com.login.view.MenuView;
-import br.com.login.view.ProfileView;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+
+import br.com.login.model.InformacoesLogin;
 
 public class LoginController {
     
@@ -33,7 +33,7 @@ public class LoginController {
             menuView.setVisible(false);
             JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso!");
         }else {
-            JOptionPane.showMessageDialog(null, "Credencias invalidas \nDigite o email seuemail@dominio.com \nDigite seu telefone xx-xxxxx-xxxx");
+            JOptionPane.showMessageDialog(null, "Credencias invalidas \nDigite o email seuemail@dominio.com \nDigite seu telefone com no minimo 11 digitos");
             
         }
     
@@ -44,34 +44,32 @@ public class LoginController {
       LoginDAO login = new LoginDAO();
       String senhaDigitada = view.getjPasswordFieldSenha().getText();
       HashCode hs = new HashCode();
-      String senha = hs.hashPassword(senhaDigitada);      
+      String senha = hs.hashPassword(senhaDigitada);     
       return login.login(view.getjTextFieldEmail().getText(), senha);
      
     }
     
-    public String buscarId(int id){
-      String sql = "SELECT email FROM login WHERE id = ?";
-    try (Connection conexao = new Conexao().getConnection();
-         PreparedStatement statment = conexao.prepareStatement(sql)) {
-         statment.setInt(1, id);
-         try(ResultSet rs = statment.executeQuery()){
+    
+    public InformacoesLogin buscarInformacoes(String emailRequerido) throws SQLException{
+        String sql = "SELECT email, nome, senha, telefone FROM login WHERE email = ?";
+        Connection conexao = new Conexao().getConnection();
+        PreparedStatement statment = conexao.prepareStatement(sql);
+        statment.setString(1, emailRequerido);
+        try(ResultSet rs = statment.executeQuery()){
              if (rs.next()){
-                 //ProfileView pf = new ProfileView();
-                 //Login login = new Login();
-                 //pf.setJTextFieldEmail(rs.getString("email"));
-                 return rs.getString("email");
-                 
-                                       
-             }
-         
-         }
-      
+                  String email = rs.getString("email");
+                  String nome = rs.getString("nome");
+                  String senha = "*************";
+                  String telefone = rs.getString("telefone");                              
+                  return InformacoesLogin.getInstance(email, nome, senha, telefone);
+                  
+             }     
+        rs.close();
+        statment.close();
+        conexao.close();
       }catch (SQLException e){
           throw new RuntimeException(e);
       }
         return null;
-
-      
-    
     }
 }
