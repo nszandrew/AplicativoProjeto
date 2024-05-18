@@ -12,15 +12,16 @@ public class InformacoesLogin {
         this.telefone = telefone;
     }
     public InformacoesLogin (){
-        
+
     }
-    
+            
     public static InformacoesLogin getInstance(String email, String nome, String senha, String telefone) {
         if (instance == null) {
             instance = new InformacoesLogin(email, nome, senha, telefone);
         }
         return instance;
     }
+    
     
     public String getEmailPesquisa() {
         return emailPesquisa;

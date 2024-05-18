@@ -101,10 +101,9 @@ public class LoginView extends javax.swing.JFrame {
             boolean resultado = login.loginUsuario(this);
         if (resultado) {            
             MenuView menuView = new MenuView();
+            menuView.setEmail(jTextFieldEmail.getText());
             menuView.setVisible(true);
             this.setVisible(false);
-            ProfileView profileView = new ProfileView(this);
-            profileView.setEmail(jTextFieldEmail.getText());
             
             
         

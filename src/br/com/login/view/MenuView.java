@@ -15,6 +15,16 @@ import java.net.URI;
  */
 public class MenuView extends javax.swing.JFrame {
 
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     
     
     public MenuView() {
@@ -187,8 +197,8 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButtonOds9ActionPerformed
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
-       this.setVisible(false);
        ProfileView perfilView = new ProfileView();
+       perfilView.setEmail(this.getEmail());
        perfilView.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed
 

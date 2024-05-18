@@ -9,14 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ProfileView extends javax.swing.JFrame {
-    private LoginView loginView;
     private String email;
-    
-        public ProfileView(LoginView loginView) {
-        initComponents();
-        this.loginView = loginView; // Salva a instância de LoginView
-        setIcon();
-    }
+
 
     public String getEmail() {
         return email;
@@ -126,8 +120,6 @@ public class ProfileView extends javax.swing.JFrame {
     
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
         this.setVisible(false);
-        MenuView menuView = new MenuView();
-        menuView.setVisible(true);
     }//GEN-LAST:event_jButtonLogOutActionPerformed
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
@@ -139,8 +131,7 @@ public class ProfileView extends javax.swing.JFrame {
            LoginController loginCon = new LoginController();
            InformacoesLogin usuario = null;
         try {
-           String email = this.getEmail();
-           System.out.println(email);
+           System.out.println(this.getEmail());
            usuario = loginCon.buscarInformacoes(email);
         if(usuario != null) {   
            setJTextFieldEmail(usuario.getEmail());
