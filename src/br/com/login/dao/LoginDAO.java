@@ -10,7 +10,7 @@ public class LoginDAO {
     
     public void cadastrarUsuario(String nome, String email, String senha, String telefone) throws SQLException {
         Connection conexao = new Conexao().getConnection();
-        String sql = "INSERT INTO login (nome, email, senha, telefone) VALUES ('"+nome+"','"+email+"','"+senha+"','"+telefone+"')";
+        String sql = "INSERT INTO tb_usuario (nome, email, senha, telefone) VALUES ('"+nome+"','"+email+"','"+senha+"','"+telefone+"')";
         System.out.println(sql);
         PreparedStatement statment = conexao.prepareStatement(sql);
         statment.execute();
@@ -19,7 +19,7 @@ public class LoginDAO {
     
     public boolean login(String email, String senha) throws SQLException{
         Connection conexao = new Conexao().getConnection();
-        String sql = "SELECT email,senha FROM login WHERE email = '"+email+"' AND senha = '"+senha+"'";
+        String sql = "SELECT email,senha FROM tb_usuario WHERE email = '"+email+"' AND senha = '"+senha+"'";
         System.out.println(sql);
         PreparedStatement statment = conexao.prepareStatement(sql);
         ResultSet rs = statment.executeQuery();

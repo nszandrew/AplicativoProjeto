@@ -27,29 +27,25 @@
   <SubComponents>
     <Component class="javax.swing.JComboBox" name="ComboBoxCadastroProjeto">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="18">
-            <StringItem index="0" value=""/>
-            <StringItem index="1" value="1 - Eradi&#xe7;&#xe3;o da pobreza"/>
-            <StringItem index="2" value="2 - Fome zero e agricultura sustentavel"/>
-            <StringItem index="3" value="3 - Sa&#xfa;de e bem-estar"/>
-            <StringItem index="4" value="4 - Educa&#xe7;&#xe3;o de qualidade"/>
-            <StringItem index="5" value="5 - Igualdade de genero"/>
-            <StringItem index="6" value="6 - &#xc1;gua potavel e saneamento"/>
-            <StringItem index="7" value="7 - Energia limpa e acessivel"/>
-            <StringItem index="8" value="8 - Trabalho descente e crescimento economico"/>
-            <StringItem index="9" value="9 - Industria e inova&#xe7;&#xe3;o e infraestrutura"/>
-            <StringItem index="10" value="10 - Redu&#xe7;&#xe3;o das desigualdades"/>
-            <StringItem index="11" value="11 - Cidades e comunidades sustentaveis"/>
-            <StringItem index="12" value="12 - Consumo e produ&#xe7;&#xe3;o responsaveis"/>
-            <StringItem index="13" value="13 - A&#xe7;&#xe3;o contra a mudan&#xe7;a global do clima"/>
-            <StringItem index="14" value="14 - Vida na &#xe1;gua"/>
-            <StringItem index="15" value="15 - Vida terrestre"/>
-            <StringItem index="16" value="16 - Paz e Justi&#xe7;a e institui&#xe7;&#xf5;es eficazes"/>
-            <StringItem index="17" value="17 - Parcerias e meios de implementa&#xe7;&#xe3;o"/>
+          <StringArray count="17">
+            <StringItem index="0" value="1 - Eradi&#xe7;&#xe3;o da pobreza"/>
+            <StringItem index="1" value="2 - Fome zero e agricultura sustentavel"/>
+            <StringItem index="2" value="3 - Sa&#xfa;de e bem-estar"/>
+            <StringItem index="3" value="4 - Educa&#xe7;&#xe3;o de qualidade"/>
+            <StringItem index="4" value="5 - Igualdade de genero"/>
+            <StringItem index="5" value="6 - &#xc1;gua potavel e saneamento"/>
+            <StringItem index="6" value="7 - Energia limpa e acessivel"/>
+            <StringItem index="7" value="8 - Trabalho descente e crescimento economico"/>
+            <StringItem index="8" value="9 - Industria e inova&#xe7;&#xe3;o e infraestrutura"/>
+            <StringItem index="9" value="10 - Redu&#xe7;&#xe3;o das desigualdades"/>
+            <StringItem index="10" value="11 - Cidades e comunidades sustentaveis"/>
+            <StringItem index="11" value="12 - Consumo e produ&#xe7;&#xe3;o responsaveis"/>
+            <StringItem index="12" value="13 - A&#xe7;&#xe3;o contra a mudan&#xe7;a global do clima"/>
+            <StringItem index="13" value="14 - Vida na &#xe1;gua"/>
+            <StringItem index="14" value="15 - Vida terrestre"/>
+            <StringItem index="15" value="16 - Paz e Justi&#xe7;a e institui&#xe7;&#xf5;es eficazes"/>
+            <StringItem index="16" value="17 - Parcerias e meios de implementa&#xe7;&#xe3;o"/>
           </StringArray>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -74,9 +70,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNome">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -95,9 +88,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldData">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -110,9 +100,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldDescricao">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>

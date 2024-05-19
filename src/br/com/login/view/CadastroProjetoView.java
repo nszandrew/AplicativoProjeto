@@ -35,8 +35,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ComboBoxCadastroProjeto.setBackground(new java.awt.Color(255, 255, 255));
-        ComboBoxCadastroProjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1 - Eradição da pobreza", "2 - Fome zero e agricultura sustentavel", "3 - Saúde e bem-estar", "4 - Educação de qualidade", "5 - Igualdade de genero", "6 - Água potavel e saneamento", "7 - Energia limpa e acessivel", "8 - Trabalho descente e crescimento economico", "9 - Industria e inovação e infraestrutura", "10 - Redução das desigualdades", "11 - Cidades e comunidades sustentaveis", "12 - Consumo e produção responsaveis", "13 - Ação contra a mudança global do clima", "14 - Vida na água", "15 - Vida terrestre", "16 - Paz e Justiça e instituições eficazes", "17 - Parcerias e meios de implementação" }));
+        ComboBoxCadastroProjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Eradição da pobreza", "2 - Fome zero e agricultura sustentavel", "3 - Saúde e bem-estar", "4 - Educação de qualidade", "5 - Igualdade de genero", "6 - Água potavel e saneamento", "7 - Energia limpa e acessivel", "8 - Trabalho descente e crescimento economico", "9 - Industria e inovação e infraestrutura", "10 - Redução das desigualdades", "11 - Cidades e comunidades sustentaveis", "12 - Consumo e produção responsaveis", "13 - Ação contra a mudança global do clima", "14 - Vida na água", "15 - Vida terrestre", "16 - Paz e Justiça e instituições eficazes", "17 - Parcerias e meios de implementação" }));
         ComboBoxCadastroProjeto.setToolTipText("");
         ComboBoxCadastroProjeto.setBorder(null);
         ComboBoxCadastroProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -47,7 +46,6 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         });
         getContentPane().add(ComboBoxCadastroProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 240, 20));
 
-        jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldNome.setBorder(null);
         jTextFieldNome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
@@ -57,11 +55,9 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 230, 20));
 
-        jTextFieldData.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldData.setBorder(null);
         getContentPane().add(jTextFieldData, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 20));
 
-        jTextFieldDescricao.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldDescricao.setBorder(null);
         getContentPane().add(jTextFieldDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 230, 20));
 
