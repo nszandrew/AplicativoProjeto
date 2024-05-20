@@ -20,7 +20,6 @@ public class LoginController {
     
     
     public void cadastroUsuario(CadastroView view) throws SQLException{
-      Connection conexao = new Conexao().getConnection();
       LoginDAO cadastro = new LoginDAO();
       HashCode hs = new HashCode();
       String pass = hs.hashPassword(view.getjPasswordFieldSenha().getText());
@@ -29,8 +28,7 @@ public class LoginController {
             cadastro.cadastrarUsuario(view.getjTextFieldNome().getText(), view.getjTextFieldEmail().getText(), pass, view.getjTextFieldTelefone().getText());
             LoginView telaLogin = new LoginView();
             telaLogin.setVisible(true);
-            MenuView menuView = new MenuView();
-            menuView.setVisible(false);
+            view.setVisible(false);
             JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso!");
         }else {
             JOptionPane.showMessageDialog(null, "Credencias invalidas \nDigite o email seuemail@dominio.com \nDigite seu telefone com no minimo 11 digitos");
@@ -40,7 +38,6 @@ public class LoginController {
     }
     
     public boolean loginUsuario(LoginView view) throws SQLException{
-      Connection conexao = new Conexao().getConnection();
       LoginDAO login = new LoginDAO();
       String senhaDigitada = view.getjPasswordFieldSenha().getText();
       HashCode hs = new HashCode();
@@ -51,7 +48,7 @@ public class LoginController {
     
     
     public InformacoesLogin buscarInformacoes(String emailRequerido) throws SQLException{
-        String sql = "SELECT email, nome, senha, telefone FROM login WHERE email = ?";
+        String sql = "SELECT email, nome, senha, telefone FROM tb_usuario WHERE email = ?";
         Connection conexao = new Conexao().getConnection();
         PreparedStatement statment = conexao.prepareStatement(sql);
         statment.setString(1, emailRequerido);
@@ -74,7 +71,7 @@ public class LoginController {
     }
     
     public void alterarInformacoes(String email, String nome, String senha, String telefone, String emailTroca) throws SQLException{
-        String sql = "UPDATE login SET email = ?, nome = ?, senha = ?, telefone = ? WHERE email = ?";      
+        String sql = "UPDATE tb_usuario SET email = ?, nome = ?, senha = ?, telefone = ? WHERE email = ?";      
         Connection conexao = null;
         PreparedStatement statment = null;
         try {
@@ -111,5 +108,30 @@ public class LoginController {
             }  
         }
         } 
+    }
+    
+    public void deletarInformacoes(String email) {
+        String sql = "DELETE FROM tb_usuario WHERE email = ?";
+        int response = JOptionPane.showConfirmDialog(null, "Você tem certeza que dejesa excluir sua conta?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        try {
+        if(response == JOptionPane.YES_OPTION){
+            Connection conexao = new Conexao().getConnection();
+            PreparedStatement statment = conexao.prepareStatement(sql);
+            statment.setString(1, email);
+            if(statment.execute() == false) {
+            JOptionPane.showMessageDialog(null, "Conta excluida com sucesso", "Crie um nova conta!", 0);
+            System.exit(0);
+            } else {
+            JOptionPane.showMessageDialog(null, "Aconteceu um erro!", "Ocorreu um erro!", 0);
+            }
+            statment.close();
+            conexao.close();  
+        }else if (response == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Cancelado");
+            }
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        
+        }
     }
 }

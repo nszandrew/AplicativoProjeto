@@ -48,7 +48,8 @@ public class ProfileView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonLogOut = new javax.swing.JButton();
+        jButtonMenu = new javax.swing.JButton();
+        jButtonDelete = new javax.swing.JButton();
         jButtonEditarPerfil = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jTextFieldEmail = new javax.swing.JTextField();
@@ -61,15 +62,26 @@ public class ProfileView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonLogOut.setBorder(null);
-        jButtonLogOut.setContentAreaFilled(false);
-        jButtonLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonLogOut.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMenu.setBorder(null);
+        jButtonMenu.setContentAreaFilled(false);
+        jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLogOutActionPerformed(evt);
+                jButtonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, 320, 40));
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 590, 120, 30));
+
+        jButtonDelete.setBorder(null);
+        jButtonDelete.setContentAreaFilled(false);
+        jButtonDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDelete.setEnabled(false);
+        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, 120, 30));
 
         jButtonEditarPerfil.setBorder(null);
         jButtonEditarPerfil.setContentAreaFilled(false);
@@ -79,7 +91,7 @@ public class ProfileView extends javax.swing.JFrame {
                 jButtonEditarPerfilActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEditarPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 220, 30));
+        getContentPane().add(jButtonEditarPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 120, 40));
 
         jButtonSalvar.setBorder(null);
         jButtonSalvar.setBorderPainted(false);
@@ -91,7 +103,7 @@ public class ProfileView extends javax.swing.JFrame {
                 jButtonSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 210, 30));
+        getContentPane().add(jButtonSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 120, 40));
 
         jTextFieldEmail.setEditable(false);
         jTextFieldEmail.setBackground(new java.awt.Color(255, 255, 255));
@@ -102,7 +114,7 @@ public class ProfileView extends javax.swing.JFrame {
                 jTextFieldEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 270, 30));
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 270, 30));
 
         jTextFieldNome.setEditable(false);
         jTextFieldNome.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,21 +124,26 @@ public class ProfileView extends javax.swing.JFrame {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 270, 30));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 260, 30));
 
         jTextFieldSenha.setEditable(false);
         jTextFieldSenha.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldSenha.setBorder(null);
         jTextFieldSenha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jTextFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 270, 30));
+        getContentPane().add(jTextFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 270, 30));
 
         jTextFieldTelefone.setEditable(false);
         jTextFieldTelefone.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldTelefone.setBorder(null);
-        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 270, 20));
+        jTextFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTelefoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 270, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ProfileViewTela.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 660));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ProfileViewImage.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, -10, 470, 660));
 
         pack();
         setLocationRelativeTo(null);
@@ -134,9 +151,9 @@ public class ProfileView extends javax.swing.JFrame {
     
     
     
-    private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed
+    private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonLogOutActionPerformed
+    }//GEN-LAST:event_jButtonMenuActionPerformed
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
         // TODO add your handling code here:      
@@ -162,7 +179,7 @@ public class ProfileView extends javax.swing.JFrame {
            jTextFieldTelefone.setEditable(true);
            jButtonEditarPerfil.setEnabled(false);
            jButtonSalvar.setEnabled(true);
-          // jButtonEditarPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+           jButtonDelete.setEnabled(true);
         }   
         } catch (SQLException ex) {
             Logger.getLogger(ProfileView.class.getName()).log(Level.SEVERE, null, ex);
@@ -180,16 +197,31 @@ public class ProfileView extends javax.swing.JFrame {
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // TODO add your handling code here:
         LoginController loginCon = new LoginController();
+        
         try {
             HashCode hs = new HashCode();
+            if (jTextFieldSenha.getText().matches("") || jTextFieldEmail.getText().matches("") || jTextFieldNome.getText().matches("" ) || jTextFieldTelefone.getText().matches("")) {
+                JOptionPane.showMessageDialog(null, "Por favor preencha todos os campos!");
+            } else {
             String pass = hs.hashPassword(jTextFieldSenha.getText());
             loginCon.alterarInformacoes(jTextFieldEmail.getText(), jTextFieldNome.getText(), pass, jTextFieldTelefone.getText(), this.getEmail());
             jButtonEditarPerfil.setEnabled(true);
             jButtonSalvar.setEnabled(false);
+            }
         } catch (SQLException e) {
             Logger.getLogger(ProfileView.class.getName()).log(Level.SEVERE, null, e);
         }
     }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
+
+    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+        // TODO add your handling code here:
+        LoginController loginCon = new LoginController();
+        loginCon.deletarInformacoes(this.getEmail());
+    }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,8 +261,9 @@ public class ProfileView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonDelete;
     private javax.swing.JButton jButtonEditarPerfil;
-    private javax.swing.JButton jButtonLogOut;
+    private javax.swing.JButton jButtonMenu;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JTextField jTextFieldEmail;

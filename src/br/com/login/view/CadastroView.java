@@ -120,7 +120,7 @@ public class CadastroView extends javax.swing.JFrame {
         } else {       
             LoginController cadastro = new LoginController();
             try {
-                cadastro.cadastroUsuario(this);
+                cadastro.cadastroUsuario(this);               
             } catch (SQLException exe) {
                 Logger.getLogger(CadastroView.class.getName()).log(Level.SEVERE, null, exe);
                 JOptionPane.showMessageDialog(rootPane, "Erro SQL" + exe );

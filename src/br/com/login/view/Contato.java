@@ -153,8 +153,8 @@ public class Contato extends javax.swing.JFrame {
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
        this.setVisible(false);
-       ProfileView perfilView = new ProfileView();
-       perfilView.setVisible(true);
+       LoginView view = new LoginView();
+       view.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed
 
     /**
