@@ -73,5 +73,8 @@ public class InfoProjeto {
         this.id = id;
     }
     
+    public String toString() {
+        return nome;
+    }
     
 }
