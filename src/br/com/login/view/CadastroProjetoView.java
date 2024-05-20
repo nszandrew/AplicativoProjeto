@@ -4,6 +4,10 @@
  */
 package br.com.login.view;
 
+import br.com.login.dao.ProjetoDAO;
+import br.com.login.model.InfoProjeto;
+import javax.swing.DefaultComboBoxModel;
+import java.sql.SQLException;
 /**
  *
  * @author Andrew
@@ -14,7 +18,20 @@ public class CadastroProjetoView extends javax.swing.JFrame {
      * Creates new form CadastroProjetoView
      */
     public CadastroProjetoView() {
+        super("Cadastro de Projetos");
         initComponents();
+        buscarProjetos();
+        
+    }
+    
+    private void buscarProjetos() {
+        try {
+            ProjetoDAO projetoDAO = new ProjetoDAO();
+            InfoProjeto[] projetos = projetoDAO.obterProjetos();
+            ComboBoxCadastroProjeto.setModel(new DefaultComboBoxModel<>(projetos));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -35,7 +52,6 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ComboBoxCadastroProjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Eradição da pobreza", "2 - Fome zero e agricultura sustentavel", "3 - Saúde e bem-estar", "4 - Educação de qualidade", "5 - Igualdade de genero", "6 - Água potavel e saneamento", "7 - Energia limpa e acessivel", "8 - Trabalho descente e crescimento economico", "9 - Industria e inovação e infraestrutura", "10 - Redução das desigualdades", "11 - Cidades e comunidades sustentaveis", "12 - Consumo e produção responsaveis", "13 - Ação contra a mudança global do clima", "14 - Vida na água", "15 - Vida terrestre", "16 - Paz e Justiça e instituições eficazes", "17 - Parcerias e meios de implementação" }));
         ComboBoxCadastroProjeto.setToolTipText("");
         ComboBoxCadastroProjeto.setBorder(null);
         ComboBoxCadastroProjeto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,7 +129,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBoxCadastroProjeto;
+    private javax.swing.JComboBox<InfoProjeto> ComboBoxCadastroProjeto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldData;
     private javax.swing.JTextField jTextFieldDescricao;

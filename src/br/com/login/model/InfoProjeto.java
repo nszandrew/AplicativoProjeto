@@ -10,15 +10,27 @@ package br.com.login.model;
  */
 public class InfoProjeto {
     private String nome, data_criacao, status, descricao;
-    private int codigo;
+    private int id;
     
-    public InfoProjeto (String nome, String data_criacao, String status, int codigo, String descricao) {
+    public InfoProjeto (String nome, String data_criacao, String status, int id, String descricao) {
         
         this.nome = nome;
         this.data_criacao = data_criacao;
         this.status = status;
-        this.codigo = codigo;
+        this.id = id;
         this.descricao = descricao;
+    }
+    
+    public InfoProjeto(String nome, String data_criacao, String status, String descricao) {
+        this.nome = nome;
+        this.data_criacao = data_criacao;
+        this.status = status;
+        this.descricao = descricao;
+    }
+    
+    public InfoProjeto (int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
     public String getNome() {
@@ -37,8 +49,8 @@ public class InfoProjeto {
         return descricao;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
     public void setNome(String nome) {
@@ -57,8 +69,9 @@ public class InfoProjeto {
         this.descricao = descricao;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int codigo) {
+        this.id = id;
     }
+    
     
 }
