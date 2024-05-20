@@ -59,9 +59,9 @@ public class LoginController {
              if (rs.next()){
                   String email = rs.getString("email");
                   String nome = rs.getString("nome");
-                  String senha = "*************";
+                  String senha = "";
                   String telefone = rs.getString("telefone");                              
-                  return InformacoesLogin.getInstance(email, nome, senha, telefone);
+                  return InformacoesLogin.getInstance(email, nome, senha, telefone);                
                   
              }     
         rs.close();
@@ -71,5 +71,45 @@ public class LoginController {
           throw new RuntimeException(e);
       }
         return null;
+    }
+    
+    public void alterarInformacoes(String email, String nome, String senha, String telefone, String emailTroca) throws SQLException{
+        String sql = "UPDATE login SET email = ?, nome = ?, senha = ?, telefone = ? WHERE email = ?";      
+        Connection conexao = null;
+        PreparedStatement statment = null;
+        try {
+            conexao = new Conexao().getConnection();
+            statment = conexao.prepareStatement(sql);
+            statment.setString(1, email);
+            statment.setString(2,nome);
+            statment.setString(3,senha);
+            statment.setString(4,telefone);
+            statment.setString(5,emailTroca);
+           
+            int rowsUpdated = statment.executeUpdate();
+        if (rowsUpdated > 0) {
+            JOptionPane.showMessageDialog(null, "Registro Atualizado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum registro foi atualizado.");
+        }
+        
+        }catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+        if (statment != null) {
+            try {
+                statment.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (conexao != null) {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }  
+        }
+        } 
     }
 }
