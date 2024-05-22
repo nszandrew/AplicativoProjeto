@@ -112,7 +112,7 @@ public class LoginController {
     
     public void deletarInformacoes(String email) {
         String sql = "DELETE FROM tb_usuario WHERE email = ?";
-        int response = JOptionPane.showConfirmDialog(null, "Você tem certeza que dejesa excluir sua conta?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        int response = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir sua conta?", "Confirmação", JOptionPane.YES_NO_OPTION);
         try {
         if(response == JOptionPane.YES_OPTION){
             Connection conexao = new Conexao().getConnection();
