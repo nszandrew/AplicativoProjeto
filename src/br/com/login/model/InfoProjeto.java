@@ -1,7 +1,6 @@
 
 package br.com.login.model;
 
-import java.util.ArrayList;
 
 public class InfoProjeto {
     private String nome, data_criacao, status, descricao;

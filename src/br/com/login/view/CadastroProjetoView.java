@@ -1,25 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.com.login.view;
 
 import br.com.login.dao.ProjetoDAO;
-import br.com.login.model.InfoProjeto;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
+
 
 
 public class CadastroProjetoView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroProjetoView
-     */
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
+
     public CadastroProjetoView() { 
         super ("Cadastro projeto");
         initComponents();
@@ -30,7 +32,6 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     public ArrayList minhaODS (){
         ArrayList<String> ods = new ArrayList<>();
 
-        // Popula o ArrayList com os valores desejados
         ods.add("1- Erradicação da pobreza");
         ods.add("2- Fome zero e agricultura sustentável");
         ods.add("3 - Saúde e Bem-Estar");
@@ -48,16 +49,13 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         ods.add("15 - Vida terrestre");
         ods.add("16 - Paz, justiça e instituições eficazes");
         ods.add("17 - Parcerias e meios de implementação");
-        // Retorna o ArrayList populado
         return ods;
     }
     
     private void buscarProjeto(){
 
-        // Obtém a lista de ODS chamando o método minhaODS
         ArrayList<String> ods = minhaODS();
 
-        // Adiciona os elementos da lista ao JComboBox
         for (String item : ods) {
         ComboBoxCadastroProjeto.addItem(item);
     }
@@ -70,9 +68,9 @@ public class CadastroProjetoView extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         ComboBoxCadastroProjeto = new javax.swing.JComboBox<>();
-        jTextFieldNome = new javax.swing.JTextField();
-        jTextFieldData = new javax.swing.JTextField();
         jTextFieldDescricao = new javax.swing.JTextField();
+        jButtonAdicionar = new javax.swing.JButton();
+        jButtonMenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -88,19 +86,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
                 ComboBoxCadastroProjetoActionPerformed(evt);
             }
         });
-        getContentPane().add(ComboBoxCadastroProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 240, 20));
-
-        jTextFieldNome.setBorder(null);
-        jTextFieldNome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 230, 20));
-
-        jTextFieldData.setBorder(null);
-        getContentPane().add(jTextFieldData, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 230, 20));
+        getContentPane().add(ComboBoxCadastroProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 240, 20));
 
         jTextFieldDescricao.setBorder(null);
         jTextFieldDescricao.addActionListener(new java.awt.event.ActionListener() {
@@ -108,9 +94,29 @@ public class CadastroProjetoView extends javax.swing.JFrame {
                 jTextFieldDescricaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 230, 20));
+        getContentPane().add(jTextFieldDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 230, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/AdicionarProjeto.png"))); // NOI18N
+        jButtonAdicionar.setBorder(null);
+        jButtonAdicionar.setContentAreaFilled(false);
+        jButtonAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdicionarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 200, 40));
+
+        jButtonMenu.setBorder(null);
+        jButtonMenu.setContentAreaFilled(false);
+        jButtonMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 437, 200, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/AddNewProject.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
@@ -119,23 +125,29 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboBoxCadastroProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCadastroProjetoActionPerformed
-        try {
-            String selecao = (String) ComboBoxCadastroProjeto.getSelectedItem();
-                // Insere a seleção do usuário no banco de dados MySQL
-                ProjetoDAO projetoDAO = new ProjetoDAO();
-            projetoDAO.inserirProjeto(selecao, jTextFieldDescricao.getText());
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroProjetoView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ComboBoxCadastroProjetoActionPerformed
 
-    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+    }//GEN-LAST:event_ComboBoxCadastroProjetoActionPerformed
 
     private void jTextFieldDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDescricaoActionPerformed
+
+    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
+        try {
+            String selecao = (String) ComboBoxCadastroProjeto.getSelectedItem();
+                // Insere a seleção do usuário no banco de dados MySQL
+                ProjetoDAO projetoDAO = new ProjetoDAO();
+            System.out.println(this.email);
+            System.out.println(selecao);
+            projetoDAO.inserirProjeto(selecao, this.email,jTextFieldDescricao.getText(), true);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroProjetoView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonAdicionarActionPerformed
+
+    private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +187,9 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxCadastroProjeto;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonAdicionar;
+    private javax.swing.JButton jButtonMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextFieldData;
     private javax.swing.JTextField jTextFieldDescricao;
-    private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }
