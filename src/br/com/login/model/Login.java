@@ -3,7 +3,7 @@ package br.com.login.model;
 
 
 public class Login {
-    private String nome, email, senha;
+    private String nome, email, senha, userEmail;
     private String telefone;
 
     public Login(String email, String senha, String telefone) {
@@ -53,6 +53,14 @@ public class Login {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    
+        public  String getUserEmail() {
+            return userEmail;
+    }
+
+        public void setUserEmail(String email) {
+            userEmail = email;
     }
     
 }

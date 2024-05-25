@@ -1,6 +1,7 @@
 package br.com.login.view;
 
 import br.com.login.controller.LoginController;
+import br.com.login.model.InformacoesLogin;
 import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -101,7 +102,7 @@ public class LoginView extends javax.swing.JFrame {
             boolean resultado = login.loginUsuario(this);
         if (resultado) {            
             MenuView menuView = new MenuView();
-            menuView.setEmail(jTextFieldEmail.getText());
+            InformacoesLogin.getInstance(email, "", "","");
             menuView.setVisible(true);
             this.setVisible(false);
             

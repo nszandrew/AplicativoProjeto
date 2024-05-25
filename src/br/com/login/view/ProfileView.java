@@ -162,9 +162,10 @@ public class ProfileView extends javax.swing.JFrame {
     private void jButtonEditarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarPerfilActionPerformed
         // TODO add your handling code here:
            LoginController loginCon = new LoginController();
-           InformacoesLogin usuario = null;
+           InformacoesLogin usuario = InformacoesLogin.getInstance();
         try {
-           usuario = loginCon.buscarInformacoes(email);
+           usuario = loginCon.buscarInformacoes(usuario.getEmail());
+          
         if(usuario != null) {   
            setJTextFieldEmail(usuario.getEmail());
            jTextFieldEmail.setEditable(true);    
