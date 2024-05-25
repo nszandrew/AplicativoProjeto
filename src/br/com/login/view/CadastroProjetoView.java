@@ -1,10 +1,12 @@
 package br.com.login.view;
 
 import br.com.login.dao.ProjetoDAO;
+import br.com.login.model.Login;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 
@@ -137,15 +139,25 @@ public class CadastroProjetoView extends javax.swing.JFrame {
             String selecao = (String) ComboBoxCadastroProjeto.getSelectedItem();
                 // Insere a seleção do usuário no banco de dados MySQL
                 ProjetoDAO projetoDAO = new ProjetoDAO();
-            System.out.println(this.email);
-            System.out.println(selecao);
-            projetoDAO.inserirProjeto(selecao, this.email,jTextFieldDescricao.getText(), true);
+                Login lg = new Login();
+            projetoDAO.inserirProjeto(selecao, lg.getEmail(),jTextFieldDescricao.getText(), true);
+            System.out.println(lg.getEmail());
+            int response = JOptionPane.showConfirmDialog(null, "Deseja consultar seu projeto cadastrado?", "Confirmação", JOptionPane.YES_NO_OPTION);
+            if (response == JOptionPane.YES_OPTION){
+                this.setVisible(false);
+                ProjetoView pv = new ProjetoView();
+                pv.setVisible(true);
+            } else if ( response == JOptionPane.NO_OPTION) {
+                
+            }
+           
         } catch (SQLException ex) {
             Logger.getLogger(CadastroProjetoView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonAdicionarActionPerformed
-
+    
     private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
+
         this.setVisible(false);
     }//GEN-LAST:event_jButtonMenuActionPerformed
 

@@ -1,6 +1,7 @@
 package br.com.login.dao;
 
 
+import br.com.login.model.Login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -33,7 +34,6 @@ public class LoginDAO {
             conexao.close();
             statment.close();
             rs.close();
-            
             return true;
             
         } else {        

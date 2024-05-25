@@ -11,13 +11,25 @@ public class InformacoesLogin {
         this.senha = senha;
         this.telefone = telefone;
     }
-    public InformacoesLogin (){
 
+    public InformacoesLogin() {
     }
+    
             
     public static InformacoesLogin getInstance(String email, String nome, String senha, String telefone) {
         if (instance == null) {
             instance = new InformacoesLogin(email, nome, senha, telefone);
+        } else {
+            instance.setNome(nome);
+            instance.setSenha(senha);
+            instance.setTelefone(telefone);
+        }
+        return instance;
+    }
+    
+    public static InformacoesLogin getInstance(){
+        if (instance == null) {
+            instance = new InformacoesLogin();
         }
         return instance;
     }

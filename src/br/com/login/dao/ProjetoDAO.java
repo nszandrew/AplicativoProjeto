@@ -9,7 +9,7 @@ public class ProjetoDAO {
     
 
     public void inserirProjeto (String ods, String email, String descricao, boolean status) throws SQLException {   
-        String sql = "INSERT INTO tb_projeto (ods_projeto, id_usuario, descricao, status_projeto) VALUES (?, ?, ?, ?);";
+        String sql = "INSERT INTO tb_projeto (nome, email_usuario, descricao, status) VALUES (?, ?, ?, ?);";
         try (Connection conexao = new Conexao().getConnection();
             PreparedStatement ps = conexao.prepareStatement(sql);) {
             ps.setString(1, ods);
