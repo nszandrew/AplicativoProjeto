@@ -31,7 +31,7 @@ public class FileUtil {
         return email.toString();
     }    
     
-        public static void deletarArquivo() {
+    public static void deletarArquivo() {
         File file = new File(FILE_PATH);
         if (file.exists()) {
             if (file.delete()) {

@@ -165,11 +165,12 @@ public class ProfileView extends javax.swing.JFrame {
            LoginController loginCon = new LoginController();
            InformacoesLogin usuario = InformacoesLogin.getInstance();
            String emas = FileUtil.lerEmail();
+           this.setEmail(emas);
         try {
-           usuario = loginCon.buscarInformacoes(emas);
+           usuario = loginCon.buscarInformacoes(this.getEmail());
           
         if(usuario != null) {   
-           setJTextFieldEmail(emas);
+           setJTextFieldEmail(this.getEmail());
            jTextFieldEmail.setEditable(true);    
            
            setjTextFieldNome(usuario.getNome());
@@ -208,6 +209,11 @@ public class ProfileView extends javax.swing.JFrame {
             } else {
             String pass = hs.hashPassword(jTextFieldSenha.getText());
             loginCon.alterarInformacoes(jTextFieldEmail.getText(), jTextFieldNome.getText(), pass, jTextFieldTelefone.getText(), this.getEmail());
+            
+            FileUtil.salvarEmail(jTextFieldEmail.getText());
+            String newMail = FileUtil.lerEmail();
+            this.setEmail(newMail);
+                System.out.println(newMail);
             jButtonEditarPerfil.setEnabled(true);
             jButtonSalvar.setEnabled(false);
             }

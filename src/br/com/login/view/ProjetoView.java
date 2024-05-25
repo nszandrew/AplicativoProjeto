@@ -35,6 +35,8 @@ public class ProjetoView extends javax.swing.JFrame {
         jButtonContato = new javax.swing.JButton();
         jButtonProfile = new javax.swing.JButton();
         jButtonMenu2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableProjetos = new javax.swing.JTable();
         jLabelProjeto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,6 +98,21 @@ public class ProjetoView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 30, 30));
+
+        jTableProjetos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableProjetos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jLabelProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ProjectView.png"))); // NOI18N
         getContentPane().add(jLabelProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -177,6 +194,8 @@ public class ProjetoView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonProjetoStay;
     private javax.swing.JButton jButtonUsar;
     private javax.swing.JLabel jLabelProjeto;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableProjetos;
     // End of variables declaration//GEN-END:variables
         private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));

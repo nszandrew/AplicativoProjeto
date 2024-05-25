@@ -207,8 +207,7 @@ public class MenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
         CadastroProjetoView projetoView = new CadastroProjetoView();
         projetoView.setVisible(true);
-
-       
+        this.setVisible(false);     
     }//GEN-LAST:event_jButtonCrieProjetoActionPerformed
 
     private void jButtonLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogOutActionPerformed

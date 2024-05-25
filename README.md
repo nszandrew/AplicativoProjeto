@@ -1,11 +1,11 @@
 # Aplicativo de Projeto ODS
 
-Este é um simples aplicativo de Registro e Login desenvolvido em Java por Andrew Nunes Souza @nszandrew.
+Este é um simples aplicativo de Registro e Login e Cadastro de Projeto desenvolvido em Java e MySQL por Andrew Souza @nszandrew.
 
 ## Instalação
 
 1. Clone este repositório para o seu computador.
-2. Certifique-se de ter o Java instalado em sua máquina.
+2. Certifique-se de ter o Java e um Banco de dados SQL instalado em sua máquina.
 3. Navegue até o diretório do projeto no terminal.
 4. Execute sua IDE e exporte o aplicativo.
 
@@ -14,6 +14,8 @@ Este é um simples aplicativo de Registro e Login desenvolvido em Java por Andre
 - Inicie o programa.
 - Faça seu registro.
 - Tente Logar com as mesmas informações.
+- Agora faça o cadastro das ODS
+- Lembre-se de configurar o SQL
 
 ## Contribuição
 
