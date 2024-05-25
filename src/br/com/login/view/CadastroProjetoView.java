@@ -1,7 +1,9 @@
 package br.com.login.view;
 
 import br.com.login.dao.ProjetoDAO;
+import br.com.login.model.InformacoesLogin;
 import br.com.login.model.Login;
+import br.com.login.writer.FileUtil;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -137,10 +139,12 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
         try {
             String selecao = (String) ComboBoxCadastroProjeto.getSelectedItem();
+            InformacoesLogin usuario = InformacoesLogin.getInstance();
+            String emas = FileUtil.lerEmail();
                 // Insere a seleção do usuário no banco de dados MySQL
                 ProjetoDAO projetoDAO = new ProjetoDAO();
                 Login lg = new Login();
-            projetoDAO.inserirProjeto(selecao, lg.getEmail(),jTextFieldDescricao.getText(), true);
+            projetoDAO.inserirProjeto(selecao,emas,jTextFieldDescricao.getText(), true);
             System.out.println(lg.getEmail());
             int response = JOptionPane.showConfirmDialog(null, "Deseja consultar seu projeto cadastrado?", "Confirmação", JOptionPane.YES_NO_OPTION);
             if (response == JOptionPane.YES_OPTION){

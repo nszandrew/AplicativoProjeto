@@ -2,6 +2,7 @@ package br.com.login.view;
 
 import br.com.login.controller.LoginController;
 import br.com.login.model.InformacoesLogin;
+import br.com.login.writer.FileUtil;
 import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -27,6 +28,7 @@ public class LoginView extends javax.swing.JFrame {
     public LoginView() {
         initComponents();
         setIcon();
+        adicionarShutdownHook();
     }
     
 
@@ -102,7 +104,7 @@ public class LoginView extends javax.swing.JFrame {
             boolean resultado = login.loginUsuario(this);
         if (resultado) {            
             MenuView menuView = new MenuView();
-            InformacoesLogin.getInstance(email, "", "","");
+            FileUtil.salvarEmail(jTextFieldEmail.getText());
             menuView.setVisible(true);
             this.setVisible(false);
             
@@ -182,5 +184,9 @@ public class LoginView extends javax.swing.JFrame {
 
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
+
+    private void adicionarShutdownHook() {
+        Runtime.getRuntime().addShutdownHook(new Thread(FileUtil::deletarArquivo));
     }
 }

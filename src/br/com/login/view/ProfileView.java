@@ -4,6 +4,7 @@ package br.com.login.view;
 import br.com.login.controller.LoginController;
 import br.com.login.hashcode.HashCode;
 import br.com.login.model.InformacoesLogin;
+import br.com.login.writer.FileUtil;
 import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -163,11 +164,12 @@ public class ProfileView extends javax.swing.JFrame {
         // TODO add your handling code here:
            LoginController loginCon = new LoginController();
            InformacoesLogin usuario = InformacoesLogin.getInstance();
+           String emas = FileUtil.lerEmail();
         try {
-           usuario = loginCon.buscarInformacoes(usuario.getEmail());
+           usuario = loginCon.buscarInformacoes(emas);
           
         if(usuario != null) {   
-           setJTextFieldEmail(usuario.getEmail());
+           setJTextFieldEmail(emas);
            jTextFieldEmail.setEditable(true);    
            
            setjTextFieldNome(usuario.getNome());

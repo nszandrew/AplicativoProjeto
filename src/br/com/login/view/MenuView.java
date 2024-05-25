@@ -1,6 +1,7 @@
 
 package br.com.login.view;
 
+import br.com.login.model.InformacoesLogin;
 import br.com.login.model.Login;
 import java.awt.Desktop;
 import java.awt.Toolkit;
@@ -206,8 +207,6 @@ public class MenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
         CadastroProjetoView projetoView = new CadastroProjetoView();
         projetoView.setVisible(true);
-        Login log = new Login();
-        projetoView.setEmail(log.getEmail());
 
        
     }//GEN-LAST:event_jButtonCrieProjetoActionPerformed

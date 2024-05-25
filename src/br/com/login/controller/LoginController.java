@@ -57,7 +57,8 @@ public class LoginController {
                   String email = rs.getString("email");
                   String nome = rs.getString("nome");
                   String senha = "";
-                  String telefone = rs.getString("telefone");                              
+                  String telefone = rs.getString("telefone");
+                  
                   return InformacoesLogin.getInstance(email, nome, senha, telefone);                
                   
              }     
