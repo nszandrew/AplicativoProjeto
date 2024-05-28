@@ -1,7 +1,6 @@
 package br.com.login.dao;
 
 
-import br.com.login.model.Login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

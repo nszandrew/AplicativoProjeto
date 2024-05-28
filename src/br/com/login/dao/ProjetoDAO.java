@@ -1,7 +1,10 @@
 
 package br.com.login.dao;
+import br.com.login.model.InfoProjeto;
+import br.com.login.model.InformacoesLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
  
 
@@ -22,4 +25,29 @@ public class ProjetoDAO {
             ps.close();
         }
     }
+    
+    public InfoProjeto[] obterODS() throws SQLException {
+        String sql = "select * from tb_curso;";
+        try(Connection conexao = new Conexao().getConnection();
+            PreparedStatement ps = conexao.prepareStatement(sql,                         
+                        ResultSet.TYPE_SCROLL_INSENSITIVE,
+                        ResultSet.CONCUR_READ_ONLY);
+                        ResultSet rs = ps.executeQuery();){
+            int totalDeCursos = rs.last() ? rs.getRow(): 0;
+            InfoProjeto[] info = new InfoProjeto[totalDeCursos];
+            rs.beforeFirst();
+            int contador = 0;
+            while (rs.next()) {
+                String ods = rs.getString("ods");
+                String dataCriacao = rs.getString("data");
+                boolean status = rs.getBoolean("tipo");
+                String descricao = rs.getString("descricao");
+                info[contador++] = new InfoProjeto(ods, dataCriacao, status, descricao); 
+            }
+            conexao.close();
+            ps.close();
+            rs.close();
+            return info;        
+        }    
+    } 
 }

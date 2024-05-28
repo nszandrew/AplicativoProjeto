@@ -139,7 +139,6 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
         try {
             String selecao = (String) ComboBoxCadastroProjeto.getSelectedItem();
-            InformacoesLogin usuario = InformacoesLogin.getInstance();
             String emas = FileUtil.lerEmail();
                 // Insere a seleção do usuário no banco de dados MySQL
                 ProjetoDAO projetoDAO = new ProjetoDAO();
@@ -152,7 +151,9 @@ public class CadastroProjetoView extends javax.swing.JFrame {
                 ProjetoView pv = new ProjetoView();
                 pv.setVisible(true);
             } else if ( response == JOptionPane.NO_OPTION) {
-                
+                this.setVisible(false);
+                MenuView mv = new MenuView();
+                mv.setVisible(true);
             }
            
         } catch (SQLException ex) {
@@ -161,7 +162,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAdicionarActionPerformed
     
     private void jButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenuActionPerformed
-
+        
         this.setVisible(false);
     }//GEN-LAST:event_jButtonMenuActionPerformed
 

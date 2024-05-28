@@ -213,7 +213,7 @@ public class ProfileView extends javax.swing.JFrame {
             FileUtil.salvarEmail(jTextFieldEmail.getText());
             String newMail = FileUtil.lerEmail();
             this.setEmail(newMail);
-                System.out.println(newMail);
+            System.out.println(newMail);
             jButtonEditarPerfil.setEnabled(true);
             jButtonSalvar.setEnabled(false);
             }

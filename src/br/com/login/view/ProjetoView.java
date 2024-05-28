@@ -4,7 +4,15 @@
  */
 package br.com.login.view;
 
+import br.com.login.dao.Conexao;
+import br.com.login.writer.FileUtil;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,7 +25,9 @@ public class ProjetoView extends javax.swing.JFrame {
      */
     public ProjetoView() {
         initComponents();
+        carregaTabela();
         setIcon();
+        buscarSelecao();
     }
 
     /**
@@ -35,6 +45,9 @@ public class ProjetoView extends javax.swing.JFrame {
         jButtonContato = new javax.swing.JButton();
         jButtonProfile = new javax.swing.JButton();
         jButtonMenu2 = new javax.swing.JButton();
+        jTextFieldDescricao = new javax.swing.JTextField();
+        jComboBoxODS = new javax.swing.JComboBox<>();
+        jComboBoxBoolean = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProjetos = new javax.swing.JTable();
         jLabelProjeto = new javax.swing.JLabel();
@@ -98,21 +111,32 @@ public class ProjetoView extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 30, 30));
+        getContentPane().add(jTextFieldDescricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 450, 40));
+
+        getContentPane().add(jComboBoxODS, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 90, 30));
+
+        jComboBoxBoolean.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "true", "false" }));
+        getContentPane().add(jComboBoxBoolean, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 90, 30));
 
         jTableProjetos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "ODS", "Data/Hora", "Ativo", "Descrição"
             }
         ));
+        jTableProjetos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableProjetosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableProjetos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 400));
 
         jLabelProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resoucer/ProjectView.png"))); // NOI18N
         getContentPane().add(jLabelProjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -151,6 +175,69 @@ public class ProjetoView extends javax.swing.JFrame {
        view.setVisible(true);
     }//GEN-LAST:event_jButtonProfileActionPerformed
 
+    private void buscarSelecao(){
+        CadastroProjetoView cpv = new CadastroProjetoView();
+        ArrayList<String> ods = cpv.minhaODS();
+            
+        for (String item : ods) {
+        jComboBoxODS.addItem(item);
+    }
+            
+            
+    }
+    
+    private void jTableProjetosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProjetosMouseClicked
+        // TODO add your handling code here:
+        int index = jTableProjetos.getSelectedRow();
+        
+        if(index != -1) {
+            String ods = jTableProjetos.getValueAt(index, 1).toString();
+            boolean status = (boolean) jTableProjetos.getValueAt(index, 3);
+            String descricao = jTableProjetos.getValueAt(index, 4).toString();
+            
+            jComboBoxBoolean.setSelectedItem(status);
+            jComboBoxODS.setSelectedItem(ods);
+            jTextFieldDescricao.setText(descricao);
+        }
+    }//GEN-LAST:event_jTableProjetosMouseClicked
+
+    private void carregaTabela(){
+       DefaultTableModel modelo = (DefaultTableModel) jTableProjetos.getModel();
+       modelo.setNumRows(0);
+       
+       jTableProjetos.getColumnModel().getColumn(0).setPreferredWidth(20);
+       jTableProjetos.getColumnModel().getColumn(0).setPreferredWidth(80);
+       jTableProjetos.getColumnModel().getColumn(0).setPreferredWidth(20);
+       jTableProjetos.getColumnModel().getColumn(0).setPreferredWidth(20);
+       
+       String sql = "SELECT * FROM tb_projeto where id_usuario = ? and status_projeto = true";
+       try {
+           Connection conexao = new Conexao().getConnection();
+           PreparedStatement ps = conexao.prepareStatement(sql);
+           String newMail = FileUtil.lerEmail();
+           ps.setString(1, newMail);
+           ResultSet rs = ps.executeQuery();
+           
+           while(rs.next()){
+              modelo.addRow(new Object[]{
+                  
+                  rs.getString(1),
+                  rs.getString(2),
+                  rs.getString(3),
+                  rs.getBoolean(4),
+                  rs.getString(5)
+              });
+           }
+           conexao.close();
+           ps.close();
+           rs.close();
+           
+       }catch(SQLException e){
+           System.out.println(e.getMessage());
+       }
+    
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -193,9 +280,12 @@ public class ProjetoView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonProfile;
     private javax.swing.JButton jButtonProjetoStay;
     private javax.swing.JButton jButtonUsar;
+    private javax.swing.JComboBox<String> jComboBoxBoolean;
+    private javax.swing.JComboBox<String> jComboBoxODS;
     private javax.swing.JLabel jLabelProjeto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProjetos;
+    private javax.swing.JTextField jTextFieldDescricao;
     // End of variables declaration//GEN-END:variables
         private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));

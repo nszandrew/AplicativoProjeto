@@ -3,16 +3,17 @@ package br.com.login.model;
 
 
 public class InfoProjeto {
-    private String nome, data_criacao, status, descricao;
+    private String nome, data_criacao, descricao;
     private int id;
-    public InfoProjeto (String nome, String data_criacao, String status, int id, String descricao) {
+    private boolean status;
+    public InfoProjeto (String nome, String data_criacao, boolean status, int id, String descricao) {
         this.nome = nome;
         this.data_criacao = data_criacao;
         this.status = status;
         this.id = id;
         this.descricao = descricao;
     }
-    public InfoProjeto(String nome, String data_criacao, String status, String descricao) {
+    public InfoProjeto(String nome, String data_criacao, boolean status, String descricao) {
         this.nome = nome;
         this.data_criacao = data_criacao;
         this.status = status;
@@ -31,7 +32,7 @@ public class InfoProjeto {
         return data_criacao;
     }
  
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
  
@@ -51,7 +52,7 @@ public class InfoProjeto {
         this.data_criacao = data_criacao;
     }
  
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
  
