@@ -7,7 +7,6 @@ import br.com.login.dao.LoginDAO;
 import br.com.login.hashcode.HashCode;
 import br.com.login.view.CadastroView;
 import br.com.login.view.LoginView;
-import br.com.login.view.MenuView;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -71,11 +70,10 @@ public class LoginController {
     }
     
     public void alterarInformacoes(String email, String nome, String senha, String telefone, String emailTroca) throws SQLException{
-        String sql = "UPDATE tb_usuario SET email = ?, nome = ?, senha = ?, telefone = ? WHERE email = ?";      
-        Connection conexao = null;
+        String sql = "UPDATE tb_usuario SET email = ?, nome = ?, senha = ?, telefone = ? WHERE email = ?";
+        Connection conexao = new Conexao().getConnection();
         PreparedStatement statment = null;
         try {
-            conexao = new Conexao().getConnection();
             statment = conexao.prepareStatement(sql);
             statment.setString(1, email);
             statment.setString(2,nome);
@@ -110,12 +108,17 @@ public class LoginController {
         } 
     }
     
-    public void deletarInformacoes(String email) {
+    public void deletarInformacoes(String email) throws SQLException {
         String sql = "DELETE FROM tb_usuario WHERE email = ?";
-        int response = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir sua conta?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        String deleteProjetos = "DELETE FROM tb_projeto WHERE id_usuario = ?";
+        Connection conexao = new Conexao().getConnection();
+        int response = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir sua conta?\nVoce ira perder os seus projetos", "Confirmação", JOptionPane.YES_NO_OPTION);
         try {
         if(response == JOptionPane.YES_OPTION){
-            Connection conexao = new Conexao().getConnection();
+            try (PreparedStatement deleteProjectsStmt = conexao.prepareStatement(deleteProjetos)) {
+                deleteProjectsStmt.setString(1, email);
+                deleteProjectsStmt.executeUpdate();
+            }       
             PreparedStatement statment = conexao.prepareStatement(sql);
             statment.setString(1, email);
             if(statment.execute() == false) {

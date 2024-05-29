@@ -4,6 +4,7 @@ import br.com.login.dao.ProjetoDAO;
 import br.com.login.model.InformacoesLogin;
 import br.com.login.model.Login;
 import br.com.login.writer.FileUtil;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -30,6 +31,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
         super ("Cadastro projeto");
         initComponents();
         buscarProjeto();
+        setIcon();
     }
     
     
@@ -209,4 +211,7 @@ public class CadastroProjetoView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldDescricao;
     // End of variables declaration//GEN-END:variables
+        private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/resoucer/Icon.png"));
+    }
 }

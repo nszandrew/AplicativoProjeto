@@ -170,8 +170,7 @@ public class ProfileView extends javax.swing.JFrame {
            usuario = loginCon.buscarInformacoes(this.getEmail());
           
         if(usuario != null) {   
-           setJTextFieldEmail(this.getEmail());
-           jTextFieldEmail.setEditable(true);    
+           setJTextFieldEmail(this.getEmail()); 
            
            setjTextFieldNome(usuario.getNome());
            jTextFieldNome.setEditable(true);
@@ -213,7 +212,6 @@ public class ProfileView extends javax.swing.JFrame {
             FileUtil.salvarEmail(jTextFieldEmail.getText());
             String newMail = FileUtil.lerEmail();
             this.setEmail(newMail);
-            System.out.println(newMail);
             jButtonEditarPerfil.setEnabled(true);
             jButtonSalvar.setEnabled(false);
             }
@@ -229,7 +227,11 @@ public class ProfileView extends javax.swing.JFrame {
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
         // TODO add your handling code here:
         LoginController loginCon = new LoginController();
-        loginCon.deletarInformacoes(this.getEmail());
+        try {
+            loginCon.deletarInformacoes(this.getEmail());
+        } catch (SQLException ex) {
+            Logger.getLogger(ProfileView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     /**

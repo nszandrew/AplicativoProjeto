@@ -50,4 +50,31 @@ public class ProjetoDAO {
             return info;        
         }    
     } 
+        public void alterarDados(String ods, String status, String descricao, String id){
+        String sql = "UPDATE tb_projeto SET ods = ?, status_projeto = ?, descricao = ? WHERE id_projeto = ?";
+        try {
+            Connection conexao = new Conexao().getConnection();
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, ods);
+            ps.setString(2, status);
+            ps.setString(3, descricao);
+            ps.setString(4, id);
+            ps.executeUpdate();
+            conexao.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deletarDados(String id){
+        String sql = "DELETE FROM tb_projeto WHERE id_projeto = ?";
+        try {
+            Connection conexao = new Conexao().getConnection();
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
