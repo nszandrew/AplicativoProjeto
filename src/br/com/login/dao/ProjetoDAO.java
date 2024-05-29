@@ -1,7 +1,6 @@
 
 package br.com.login.dao;
 import br.com.login.model.InfoProjeto;
-import br.com.login.model.InformacoesLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,4 +49,31 @@ public class ProjetoDAO {
             return info;        
         }    
     } 
+    public void alterarDados(String ods, String status, String descricao, String id){
+        String sql = "UPDATE tb_projeto SET ods = ?, status_projeto = ?, descricao = ? WHERE id = ?";
+        try {
+            Connection conexao = new Conexao().getConnection();
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, ods);
+            ps.setString(2, status);
+            ps.setString(3, descricao);
+            ps.setString(4, id);
+            ps.executeUpdate();
+            conexao.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deletarDados(String id){
+        String sql = "DELETE FROM tb_projeto WHERE id = ?";
+        try {
+            Connection conexao = new Conexao().getConnection();
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
